@@ -2,7 +2,7 @@
 
 namespace MachineLearningModule.Repositories
 {
-    public class EventRepositoryService : IEventRepositoryService
+    public interface IHomeEventsService : IService
     {
     }
 }
