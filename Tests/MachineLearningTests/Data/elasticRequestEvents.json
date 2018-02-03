@@ -1,0 +1,34 @@
+﻿{
+  "version": true,
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match_phrase": {
+            "doc": {
+              "query": "event"
+            }
+          }
+        },
+        {
+          "range": {
+            "@timestamp": {
+              "gte": 1517673180293,
+              "lte": 1517673821293,
+              "format": "epoch_millis"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "size": 500,
+  "sort": [
+    {
+      "@timestamp": {
+        "order": "desc",
+        "unmapped_type": "boolean"
+      }
+    }
+  ]
+}
