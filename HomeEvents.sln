@@ -5,6 +5,22 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsGui", "WindowsFormsGui\WindowsFormsGui.csproj", "{ED70E598-0D72-4478-8D49-2B4C9A9B3F73}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{BAD8AF8A-2ED7-45EE-8FE8-9B1D2B2EC735}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicArchiveModule", "Modules\MusicArchive\MusicArchiveModule.csproj", "{EA57875C-0ABB-4355-A9AF-438C4A887926}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineLearningModule", "Modules\MachineLearningModule\MachineLearningModule.csproj", "{175E4A57-8E7D-46FF-89B7-F27262F6501F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfCheckerModule", "Modules\SelfCheckerModule\SelfCheckerModule.csproj", "{63DB1A5B-D9A5-4121-8541-C6E7ECA331CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B742238D-5AA9-4A30-B2FB-C87E620CD12A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{E0020CD4-EC98-413D-A34E-FF66097D218D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonTests", "Test\CommonTests\CommonTests.csproj", "{52318BCD-03D8-4DE2-A9E6-67CFF723741B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineLearningTests", "Tests\MachineLearningTests\MachineLearningTests.csproj", "{791E2865-E6CA-4C48-B4CC-9D89216ABBEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +31,35 @@ Global
 		{ED70E598-0D72-4478-8D49-2B4C9A9B3F73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED70E598-0D72-4478-8D49-2B4C9A9B3F73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED70E598-0D72-4478-8D49-2B4C9A9B3F73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA57875C-0ABB-4355-A9AF-438C4A887926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA57875C-0ABB-4355-A9AF-438C4A887926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA57875C-0ABB-4355-A9AF-438C4A887926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA57875C-0ABB-4355-A9AF-438C4A887926}.Release|Any CPU.Build.0 = Release|Any CPU
+		{175E4A57-8E7D-46FF-89B7-F27262F6501F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{175E4A57-8E7D-46FF-89B7-F27262F6501F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{175E4A57-8E7D-46FF-89B7-F27262F6501F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{175E4A57-8E7D-46FF-89B7-F27262F6501F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63DB1A5B-D9A5-4121-8541-C6E7ECA331CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63DB1A5B-D9A5-4121-8541-C6E7ECA331CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63DB1A5B-D9A5-4121-8541-C6E7ECA331CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63DB1A5B-D9A5-4121-8541-C6E7ECA331CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52318BCD-03D8-4DE2-A9E6-67CFF723741B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52318BCD-03D8-4DE2-A9E6-67CFF723741B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52318BCD-03D8-4DE2-A9E6-67CFF723741B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52318BCD-03D8-4DE2-A9E6-67CFF723741B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{791E2865-E6CA-4C48-B4CC-9D89216ABBEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{791E2865-E6CA-4C48-B4CC-9D89216ABBEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{791E2865-E6CA-4C48-B4CC-9D89216ABBEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{791E2865-E6CA-4C48-B4CC-9D89216ABBEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EA57875C-0ABB-4355-A9AF-438C4A887926} = {BAD8AF8A-2ED7-45EE-8FE8-9B1D2B2EC735}
+		{175E4A57-8E7D-46FF-89B7-F27262F6501F} = {BAD8AF8A-2ED7-45EE-8FE8-9B1D2B2EC735}
+		{63DB1A5B-D9A5-4121-8541-C6E7ECA331CB} = {BAD8AF8A-2ED7-45EE-8FE8-9B1D2B2EC735}
+		{52318BCD-03D8-4DE2-A9E6-67CFF723741B} = {B742238D-5AA9-4A30-B2FB-C87E620CD12A}
+		{791E2865-E6CA-4C48-B4CC-9D89216ABBEA} = {B742238D-5AA9-4A30-B2FB-C87E620CD12A}
 	EndGlobalSection
 EndGlobal
