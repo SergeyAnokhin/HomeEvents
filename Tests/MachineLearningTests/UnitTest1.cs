@@ -9,6 +9,14 @@ namespace MachineLearningTests
     public class UnitTest1
     {
         [TestMethod]
+        public void AppConfigServiceTest()
+        {
+            var config = new AppConfigService();
+            var obj = config.GetMyConfig();
+            Assert.AreEqual("http://windowsserver:9200", obj["elasticsearch"])
+        }
+
+        [TestMethod]
         public void TestMethod1()
         {
 

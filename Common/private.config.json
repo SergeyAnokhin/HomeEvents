@@ -1,0 +1,3 @@
+{
+  "elasticsearch.host" :  "http://windowsserver:9200", 
+}
