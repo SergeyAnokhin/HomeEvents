@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineLearningTests", "Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonTests", "Tests\CommonTests\CommonTests.csproj", "{52318BCD-03D8-4DE2-A9E6-67CFF723741B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{27AF4330-31CB-4434-8AE5-E1387A408096}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{52318BCD-03D8-4DE2-A9E6-67CFF723741B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52318BCD-03D8-4DE2-A9E6-67CFF723741B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52318BCD-03D8-4DE2-A9E6-67CFF723741B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27AF4330-31CB-4434-8AE5-E1387A408096}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27AF4330-31CB-4434-8AE5-E1387A408096}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27AF4330-31CB-4434-8AE5-E1387A408096}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27AF4330-31CB-4434-8AE5-E1387A408096}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +67,7 @@ Global
 		{63DB1A5B-D9A5-4121-8541-C6E7ECA331CB} = {BAD8AF8A-2ED7-45EE-8FE8-9B1D2B2EC735}
 		{791E2865-E6CA-4C48-B4CC-9D89216ABBEA} = {B742238D-5AA9-4A30-B2FB-C87E620CD12A}
 		{52318BCD-03D8-4DE2-A9E6-67CFF723741B} = {B742238D-5AA9-4A30-B2FB-C87E620CD12A}
+		{27AF4330-31CB-4434-8AE5-E1387A408096} = {E0020CD4-EC98-413D-A34E-FF66097D218D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BD61D29F-EEB6-4199-B4B7-18F1D2C9114B}
