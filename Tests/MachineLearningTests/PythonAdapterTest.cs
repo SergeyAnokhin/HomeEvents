@@ -1,25 +1,15 @@
-﻿using System.Collections.Generic;
-using Common;
-using MachineLearningModule.Repositories;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MachineLearningTests
 {
     [TestClass]
-    public class UnitTest1
+    public class PythonAdapterTest
     {
-        [TestMethod]
-        public void AppConfigServiceTest()
-        {
-            var config = new AppConfigService();
-            var obj = config.GetModuleConfig<MachineLearningModule.Config.Config>();
-            Assert.AreEqual("http://windowsserver:9200", obj.ElasticsearchHost);
-        }
-
         [TestMethod]
         public void TestMethod1()
         {
-
             var expected = new List<string>()
             {
                 "0#FrontWall(.) Foscam|Motion=1",
@@ -46,12 +36,6 @@ namespace MachineLearningTests
                 "16#Hall(0) Ceiling|Motion=1",
                 "17#Corridor(1) Ceiling|Motion=1",
             };
-
-            var config = new AppConfigService();
-            var elastic = new ElasticSearchService(config);
-            var target = new HomeEventsService(elastic);
-
-            // target.GetSnapshot()
         }
     }
 }
