@@ -1,4 +1,5 @@
-﻿using Common;
+﻿using System;
+using Common;
 using MachineLearningModule.Repositories;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -12,9 +13,9 @@ namespace MachineLearningTests
         {
             var config = new AppConfigService();
             var elastic = new ElasticSearchService(config);
-            var target = new HomeEventsService(config, elastic);
+            IHomeEventsService target = new HomeEventsService(config, elastic);
 
-            // target.GetEventsWindow();
+            target.GetEventsWindow(new DateTime(2018, 02, 03, 17, 04, 00));
         }
     }
 }

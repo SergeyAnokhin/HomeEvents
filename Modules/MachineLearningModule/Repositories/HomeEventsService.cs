@@ -1,4 +1,6 @@
-﻿using Common;
+﻿using System;
+using System.Collections.Generic;
+using Common;
 using Interfaces;
 
 namespace MachineLearningModule.Repositories
@@ -12,6 +14,11 @@ namespace MachineLearningModule.Repositories
         {
             this.config = config;
             this.elastic = elastic;
+        }
+
+        public IEnumerable<ElasticSearchEvent> GetEventsWindow(DateTime dateTime)
+        {
+            // elastic
         }
     }
 }
