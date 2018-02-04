@@ -1,22 +1,20 @@
-﻿using System.Collections.Generic;
-using Common;
+﻿using Common;
 using MachineLearningModule.Repositories;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace MachineLearningTests
 {
     [TestClass]
-    public class ElasticSearchServiceTests
+    public class HomeEventsServiceTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void BasicTest()
         {
-
-
             var config = new AppConfigService();
             var elastic = new ElasticSearchService(config);
+            var target = new HomeEventsService(config, elastic);
 
-            // target.GetSnapshot()
+            // target.GetEventsWindow();
         }
     }
 }

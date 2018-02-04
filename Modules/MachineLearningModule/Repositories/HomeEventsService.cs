@@ -1,14 +1,17 @@
-﻿using Interfaces;
+﻿using Common;
+using Interfaces;
 
 namespace MachineLearningModule.Repositories
 {
     public class HomeEventsService : IHomeEventsService
     {
-        private readonly IElasticSearchService elasticSearch;
+        private readonly IAppConfigService config;
+        private readonly IElasticSearchService elastic;
 
-        public HomeEventsService(IElasticSearchService elasticSearch)
+        public HomeEventsService(IAppConfigService config, IElasticSearchService elastic)
         {
-            this.elasticSearch = elasticSearch;
+            this.config = config;
+            this.elastic = elastic;
         }
     }
 }
