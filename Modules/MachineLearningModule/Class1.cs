@@ -1,12 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MachineLearningModule
 {
-    public class Class1
+    public class Bootstrapper : Prism.Bootstrapper
     {
+        public override void Run(bool runWithDefaultConfiguration)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void ConfigureServiceLocator()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

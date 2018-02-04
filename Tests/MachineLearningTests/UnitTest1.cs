@@ -12,8 +12,8 @@ namespace MachineLearningTests
         public void AppConfigServiceTest()
         {
             var config = new AppConfigService();
-            var obj = config.GetMyConfig();
-            Assert.AreEqual("http://windowsserver:9200", obj["elasticsearch"])
+            var obj = config.GetModuleConfig<MachineLearningModule.Config.Config>();
+            Assert.AreEqual("http://windowsserver:9200", obj.ElasticsearchHost);
         }
 
         [TestMethod]
