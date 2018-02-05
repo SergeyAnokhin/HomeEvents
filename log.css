@@ -1,0 +1,141 @@
+﻿body
+{
+	font-size: 10px;
+	font-family: Verdana;
+}
+.message
+{
+	color: #990000;
+}
+
+.cache
+{
+	color: #339933;
+}
+.conn
+{
+	color: inactivecaption;
+}
+.working
+{
+	color: #1c5180;
+	font-weight: bold;
+	background-color: #eeeeee;
+	font-family: Tahoma;
+}
+
+
+small
+{
+	font-size: 8px;
+	font-family: Verdana;
+}
+code
+{
+	font-size: 12px;
+	color: #b600d8;
+}
+.bluebold
+{
+	font-weight: bold;
+	color: #0000ff;
+}
+.redbold
+{
+	font-weight: bold;
+	color: #ff0000;
+}
+.method
+{
+	font-family: 'Courier New';
+	color: #2b91af;
+}
+.level
+{
+	font-family: 'Courier New';
+	color: blue;
+}
+.exception
+{
+	font-size: 14px;
+	font-family: 'Lucida Console';
+	background-color: #ffff99;
+}
+.sqlError
+{
+	font-size: 14px;
+	color: #76008A;
+	font-family: 'Lucida Console';
+	background-color: #FFD7D7;
+}
+.MessageError
+{
+	font-size: 14px;
+	color: #FF0000;
+}
+.username
+{
+	color: cornflowerblue;
+}
+.sql
+{
+	font-size: 14px;
+	color: #005500;
+	font-family: 'Lucida Console';
+	background-color: #ffff66;
+}
+.sqlUpdate
+{
+	font-size: 14px;
+	color: #b600d8;
+	font-family: 'Lucida Console';
+	background-color: #ffff66;
+}
+.useraction
+{
+	border-style: none none none dotted;
+	border-color: #00FFFF;
+}
+.button
+{
+	color: black;
+	font-size: 12px;
+	font-family: Tahoma;
+	background-color: buttonface;
+	border-right: thin outset;
+	border-top: thin outset;
+	border-left: thin outset;
+	border-bottom: thin outset;
+}
+.generic
+{
+	font-weight: normal;
+	font-style: italic;
+	color: #808080;
+}
+.StatusFilled
+{
+	color: #C0C0C0;
+}
+.StatusSended
+{
+	background-color: #FFCC99;
+}
+.StatusProcessed
+{
+	background-color: #CCFF99;
+	font-style: italic;
+}
+.StatusInserted
+{
+	background-color: #CCFF99;
+}
+.StatusAborted
+{
+	color: #FF0000;
+}
+.StatusCancelled
+{
+	color: #FF0000;
+}
+

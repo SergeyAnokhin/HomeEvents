@@ -9,7 +9,8 @@ namespace CommonTests
         [TestMethod]
         public void BasicTest()
         {
-            var config = new AppConfigService();
+            var log = new LogService();
+            var config = new AppConfigService(log);
             var obj = config.GetModuleConfig<MachineLearningModule.Config.Config>();
             Assert.AreEqual("http://windowsserver:9200", obj.ElasticsearchHost);
         }

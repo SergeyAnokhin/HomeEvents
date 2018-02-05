@@ -1,4 +1,6 @@
-﻿using System.Reflection;
+﻿using System;
+using System.ComponentModel;
+using System.Reflection;
 using log4net;
 
 namespace Common
@@ -9,15 +11,23 @@ namespace Common
         void Info(string message);
         void Error(string message);
         void Fatal(string message);
+        ILogService Init(Type requestedType);
     }
 
     public class LogService : ILogService
     {
-        private static readonly ILog logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private ILog logger = LogManager.GetLogger("undefined");
 
         public LogService()
         {
             log4net.Config.XmlConfigurator.Configure();
+        }
+
+        public ILogService Init(Type requestedType)
+        {
+            logger = LogManager.GetLogger(requestedType);
+            logger.Info($"[<b>{requestedType.Name}</b>] init");
+            return this;
         }
 
         public void Debug(string message)

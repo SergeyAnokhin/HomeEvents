@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Common;
-using Interfaces;
 using Nest;
 
 namespace MachineLearningModule.Repositories
@@ -10,24 +9,22 @@ namespace MachineLearningModule.Repositories
     {
         private readonly Config.Config config;
         private readonly IElasticSearchService elastic;
+        private ILogService log;
 
-        public HomeEventsService(IAppConfigService config, IElasticSearchService elastic)
+        public HomeEventsService(IAppConfigService config, IElasticSearchService elastic, ILogService log)
         {
+            this.log = log.Init(GetType());
             this.config = config.GetModuleConfig<Config.Config>();
             this.elastic = elastic;
         }
 
         public IEnumerable<ElasticSearchEvent> GetEventsWindow(DateTime endDateTime)
         {
-            //var queryForm = new TermQuery
-            //{
-            //    Field = "doc",
-            //    Value = "event"
-            //};
-
-            var match = new MatchPhraseQuery();
-            match.Field = new Field("doc");
-            match.Query = "event";
+            var match = new MatchPhraseQuery
+            {
+                Field = new Field("doc"),
+                Query = "event"
+            };
 
             var rangeQuery = new DateRangeQuery
             {

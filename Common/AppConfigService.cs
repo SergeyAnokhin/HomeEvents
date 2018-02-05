@@ -7,6 +7,13 @@ namespace Common
 {
     public class AppConfigService : IAppConfigService
     {
+        private ILogService log;
+
+        public AppConfigService(ILogService log)
+        {
+            this.log = log.Init(GetType());
+        }
+
         public T GetModuleConfig<T>()
         {
             var name = typeof(T).Assembly.GetName().Name;

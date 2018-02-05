@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Common;
-using Interfaces;
 using Nest;
 
 namespace MachineLearningModule.Repositories
@@ -13,7 +12,7 @@ namespace MachineLearningModule.Repositories
 
         public ElasticSearchService(IAppConfigService configService, ILogService log)
         {
-            this.log = log;
+            this.log = log.Init(GetType());
             config = configService.GetModuleConfig<Config.Config>();
         }
 
