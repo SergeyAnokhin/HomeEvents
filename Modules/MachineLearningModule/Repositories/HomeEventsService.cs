@@ -19,11 +19,15 @@ namespace MachineLearningModule.Repositories
 
         public IEnumerable<ElasticSearchEvent> GetEventsWindow(DateTime endDateTime)
         {
-            var queryForm = new TermQuery
-            {
-                Field = "doc",
-                Value = "event"
-            };
+            //var queryForm = new TermQuery
+            //{
+            //    Field = "doc",
+            //    Value = "event"
+            //};
+
+            var match = new MatchPhraseQuery();
+            match.Field = new Field("doc");
+            match.Query = "event";
 
             var rangeQuery = new DateRangeQuery
             {
@@ -32,9 +36,30 @@ namespace MachineLearningModule.Repositories
                 GreaterThanOrEqualTo = endDateTime.AddSeconds(-config.EventsWindowsSeconds)
             };
 
-            var searchRequest = new SearchRequest {Query = queryForm && rangeQuery};
+            var boolQuery = new BoolQuery
+            {
+                Must = new List<QueryContainer>
+                {
+                    match,
+                    rangeQuery
+                }
+            };
 
-            return elastic.Request<ElasticSearchEvent>(searchRequest);
+            var searchRequest = new SearchRequest
+            {
+                Query = boolQuery,
+                Sort = new List<ISort>()
+                {
+                    new SortField
+                    {
+                        Field = new Field("@timestamp"),
+                        Order = SortOrder.Descending
+                    }
+                }
+            };
+
+            var result = elastic.Request<ElasticSearchEvent>(searchRequest);
+            return result;
         }
     }
 }

@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 
 namespace MachineLearningModule.Repositories
 {
+    [ElasticsearchType(IdProperty = "_id")]
     public class ElasticSearchEvent
     {
         public string _id { get; set; }

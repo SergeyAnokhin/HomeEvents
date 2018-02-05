@@ -1,0 +1,17 @@
+{
+  "query": {
+    "bool": {
+      "must": [
+        { "match_phrase": { "doc": { "query": "event" } } },
+        {
+          "range": {
+            "@timestamp": {
+              "gte": "2018-02-03T15:54:00",
+              "lte": "2018-02-03T16:04:00"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

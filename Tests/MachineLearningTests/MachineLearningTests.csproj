@@ -100,6 +100,8 @@
     <None Include="app.config" />
     <None Include="Data\elasticRequestEvents.json" />
     <None Include="Data\elasticResponseEvents.json" />
+    <None Include="Data\eventsTestHelper.xlsx" />
+    <None Include="Data\json1.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
