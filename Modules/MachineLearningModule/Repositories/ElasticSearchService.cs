@@ -27,6 +27,10 @@ namespace MachineLearningModule.Repositories
             var client = new ElasticClient(settings);
 
             var response = client.Search<T>(searchRequest);
+            if (response.ServerError != null)
+            {
+                throw new Exception(response.ServerError.Error.Reason);
+            }
             return response.Documents;
         }
     }

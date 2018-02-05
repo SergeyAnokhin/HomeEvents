@@ -15,7 +15,7 @@ namespace MachineLearningTests
             var elastic = new ElasticSearchService(config);
             IHomeEventsService target = new HomeEventsService(config, elastic);
 
-            var result = target.GetEventsWindow(new DateTime(2018, 02, 03, 17, 04, 00));
+            var result = target.GetEventsWindow(new DateTime(2018, 02, 03, 18, 04, 00));
         }
     }
 }
