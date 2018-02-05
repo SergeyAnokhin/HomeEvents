@@ -1,8 +1,11 @@
-﻿using Common;
+﻿using System.Collections.Generic;
+using Common;
+using Nest;
 
-namespace Interfaces
+namespace MachineLearningModule.Repositories
 {
     public interface IElasticSearchService : IService
     {
+        IEnumerable<T> Request<T>(SearchRequest searchRequest) where T : class;
     }
 }

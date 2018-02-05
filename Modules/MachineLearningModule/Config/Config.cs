@@ -3,5 +3,7 @@
     public class Config
     {
         public string ElasticsearchHost { get; set; }
+        public int EventsWindowsSeconds { get; set; }
+        public int EventsWindowsStep { get; set; }
     }
 }

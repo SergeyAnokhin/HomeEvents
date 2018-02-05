@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using Common;
 using Interfaces;
 using Nest;
 
 namespace MachineLearningModule.Repositories
 {
-    public class ElasticSearchService : IElasticSearchService, IEventRepositoryService
+    public class ElasticSearchService : IElasticSearchService
     {
         private readonly Config.Config config;
 
@@ -14,7 +15,7 @@ namespace MachineLearningModule.Repositories
             configService.GetModuleConfig<Config.Config>();
         }
 
-        public void Request<T>()
+        public IEnumerable<T> Request<T>(SearchRequest searchRequest) where T : class
         {
             var node = new Uri(config.ElasticsearchHost);
 
@@ -25,7 +26,8 @@ namespace MachineLearningModule.Repositories
 
             var client = new ElasticClient(settings);
 
-            client.Search<T>(s => s.Query(d => d.DateRange()))
+            var response = client.Search<T>(searchRequest);
+            return response.Documents;
         }
     }
 }

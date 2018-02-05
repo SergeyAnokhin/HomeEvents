@@ -1,3 +1,5 @@
 {
-  "ElasticsearchHost": "http://windowsserver:9200" 
+  "ElasticsearchHost": "http://windowsserver:9200",
+  "EventsWindowsSeconds": 600,
+  "EventsWindowsStep":  30
 }
