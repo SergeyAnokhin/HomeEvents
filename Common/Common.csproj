@@ -46,10 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppConfigService.cs" />
-    <Compile Include="IAppConfigService.cs" />
+    <Compile Include="Config\AppConfigService.cs" />
+    <Compile Include="Config\IAppConfigService.cs" />
+    <Compile Include="Config\PrivateConfig.cs" />
     <Compile Include="ILogService.cs" />
     <Compile Include="IService.cs" />
+    <Compile Include="Config\OverrideIfExistAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,7 +63,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="private.config.json">
+    <None Include="PrivateConfig.config.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

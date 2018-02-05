@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Common;
 using Nest;
 
@@ -21,7 +22,7 @@ namespace MachineLearningModule.Repositories
             searchRequest.Size = searchRequest.Size ?? 500;
 
             var settings = new ConnectionSettings(
-                new Uri(config.ElasticsearchHost)
+                new Uri(config.ElasticsearchHost.Last())
             );
             settings.DisableDirectStreaming();
 

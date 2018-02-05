@@ -12,7 +12,7 @@ namespace CommonTests
             var log = new LogService();
             var config = new AppConfigService(log);
             var obj = config.GetModuleConfig<MachineLearningModule.Config.Config>();
-            Assert.AreEqual("http://windowsserver:9200", obj.ElasticsearchHost);
+            CollectionAssert.Contains(obj.ElasticsearchHost, "http://windowsserver:9200");
         }
     }
 }
