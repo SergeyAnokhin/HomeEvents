@@ -12,7 +12,7 @@ namespace MachineLearningModule.Repositories
 
         public ElasticSearchService(IAppConfigService configService)
         {
-            configService.GetModuleConfig<Config.Config>();
+            config = configService.GetModuleConfig<Config.Config>();
         }
 
         public IEnumerable<T> Request<T>(SearchRequest searchRequest) where T : class
