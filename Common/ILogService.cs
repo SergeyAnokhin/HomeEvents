@@ -17,9 +17,9 @@ namespace Common
 
     public class LogService : ILogService
     {
-        private ILog logger = LogManager.GetLogger("undefined");
+        private ILog logger = LogManager.GetLogger(typeof(LogService));
 
-        public LogService()
+        static LogService()
         {
             log4net.Config.XmlConfigurator.Configure();
         }
