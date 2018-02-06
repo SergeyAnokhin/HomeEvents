@@ -59,11 +59,17 @@ namespace Common
 
         }
 
-        private void ApplyPrivateConfig<T>(T config)
+        private void ApplyPrivateConfig(object config)
         {
-            foreach(var property in typeof(T).GetProperties())
+            var typeOfConfig = config.GetType();
+            foreach (var property in typeOfConfig.GetProperties())
             {
                 var attrs = property.GetCustomAttributes(typeof(CanPrivateOverride), false);
+                if (property.PropertyType.Assembly == typeOfConfig.Assembly)
+                {
+                    var subConfig = property.GetMethod.Invoke(config, null);
+                    ApplyPrivateConfig(subConfig);
+                }
                 if (!attrs.Any()) continue;
 
                 var attr = attrs.Cast<CanPrivateOverride>().First();

@@ -1,5 +1,8 @@
 {
-  "ElasticsearchHost": [ "http://windowsserver:9200" ],
   "EventsWindowsSeconds": 600,
-  "EventsWindowsStep":  30
+  "EventsWindowsStep": 30,
+  "ElasticSearchService": {
+    "Hosts": [ "http://windowsserver:9200" ],
+    "IsEnableDebuggingRequestResponse": true
+  }
 }

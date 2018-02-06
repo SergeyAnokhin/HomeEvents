@@ -1,6 +1,5 @@
 ﻿using System;
 using Nest;
-using Newtonsoft.Json;
 
 namespace MachineLearningModule.Repositories
 {

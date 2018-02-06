@@ -22,9 +22,11 @@ namespace MachineLearningModule.Repositories
             searchRequest.Size = searchRequest.Size ?? 500;
 
             var settings = new ConnectionSettings(
-                new Uri(config.ElasticsearchHost.Last())
+                new Uri(config.ElasticSearchService.Hosts.Last())
             );
-            settings.DisableDirectStreaming();
+            log.Info($"Connect to elastic search : {config.ElasticSearchService.Hosts.Last()}");
+            if(config.ElasticSearchService.IsEnableDebuggingRequestResponse)
+                settings.DisableDirectStreaming();
 
             var client = new ElasticClient(settings);
             

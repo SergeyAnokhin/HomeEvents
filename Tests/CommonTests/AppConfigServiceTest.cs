@@ -13,9 +13,10 @@ namespace CommonTests
             var log = new LogService();
             var config = new AppConfigService(log);
             var obj = config.GetModuleConfig<MachineLearningModule.Config.Config>();
-            Assert.AreEqual(2, obj.ElasticsearchHost.Length);
-            CollectionAssert.Contains(obj.ElasticsearchHost, "http://windowsserver:9200");
-            Assert.IsTrue(obj.ElasticsearchHost.Any(i => i.EndsWith(".com")));
+            Assert.AreEqual(2, obj.ElasticSearchService.Hosts.Length);
+            CollectionAssert.Contains(obj.ElasticSearchService.Hosts, "http://windowsserver:9200");
+            Assert.IsTrue(obj.ElasticSearchService.Hosts.Any(i => i.EndsWith(".com")));
+            Assert.IsTrue(obj.ElasticSearchService.IsEnableDebuggingRequestResponse);
         }
     }
 }
