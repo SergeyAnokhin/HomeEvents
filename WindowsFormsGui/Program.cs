@@ -14,6 +14,9 @@ namespace WindowsFormsGui
         [STAThread]
         static void Main()
         {
+            var bootstrapper = new Bootstrapper();
+            bootstrapper.Run();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

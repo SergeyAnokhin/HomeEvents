@@ -93,7 +93,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bootstrapper.cs" />
     <Compile Include="Config\Config.cs" />
     <Compile Include="Brain\BrainInfo.cs" />
     <Compile Include="Brain\BrainPrediction.cs" />
@@ -101,6 +100,7 @@
     <Compile Include="Events\HomeEvent.cs" />
     <Compile Include="Brain\IBrainsManager.cs" />
     <Compile Include="Events\IEventsManager.cs" />
+    <Compile Include="MachineLearningModule.cs" />
     <Compile Include="Repositories\ElasticSearchEvent.cs" />
     <Compile Include="Repositories\ElasticSearchService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
