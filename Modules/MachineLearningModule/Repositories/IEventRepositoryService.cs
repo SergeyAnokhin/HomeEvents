@@ -1,6 +1,6 @@
 ﻿using Common;
 
-namespace Interfaces
+namespace MachineLearningModule.Repositories
 {
     public interface IEventRepositoryService : IService
     {
