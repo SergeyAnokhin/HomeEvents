@@ -1,5 +1,5 @@
 ﻿
-namespace Common
+namespace Common.Config
 {
     public interface IAppConfigService : IService
     {

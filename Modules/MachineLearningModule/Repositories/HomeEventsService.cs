@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Common;
+using Common.Config;
 using Nest;
 
 namespace MachineLearningModule.Repositories

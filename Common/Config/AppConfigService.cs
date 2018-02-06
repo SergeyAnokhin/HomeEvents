@@ -1,11 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Common.Config;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 
-namespace Common
+namespace Common.Config
 {
     public class AppConfigService : IAppConfigService
     {

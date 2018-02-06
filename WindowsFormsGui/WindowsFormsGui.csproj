@@ -107,21 +107,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{d41dd652-0a14-4d0c-bbb8-ce969a489ab1}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Modules\MachineLearningModule\MachineLearningModule.csproj">
       <Project>{175e4a57-8e7d-46ff-89b7-f27262f6501f}</Project>
       <Name>MachineLearningModule</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Modules\MusicArchive\MusicArchiveModule.csproj">
-      <Project>{ea57875c-0abb-4355-a9af-438c4a887926}</Project>
-      <Name>MusicArchiveModule</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Modules\SelfCheckerModule\SelfCheckerModule.csproj">
-      <Project>{63db1a5b-d9a5-4121-8541-c6e7eca331cb}</Project>
-      <Name>SelfCheckerModule</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

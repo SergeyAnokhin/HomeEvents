@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Common
+namespace Common.Config
 {
     public class CanPrivateOverride : Attribute
     {

@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Common;
+using Common.Config;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CommonTests
