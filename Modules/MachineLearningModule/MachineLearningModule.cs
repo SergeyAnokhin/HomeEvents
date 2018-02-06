@@ -1,5 +1,5 @@
 ﻿using Prism.Modularity;
-using Unity;
+using Microsoft.Practices.Unity;
 
 namespace MachineLearningModule
 {
