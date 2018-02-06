@@ -51,7 +51,7 @@
     <Compile Include="Config\PrivateConfig.cs" />
     <Compile Include="ILogService.cs" />
     <Compile Include="IService.cs" />
-    <Compile Include="Config\OverrideIfExistAttribute.cs" />
+    <Compile Include="Config\CanPrivateOverride.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

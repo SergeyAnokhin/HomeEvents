@@ -9,6 +9,7 @@ namespace Common
     {
         void Debug(string message);
         void Info(string message);
+        void Warn(string message);
         void Error(string message);
         void Fatal(string message);
         ILogService Init(Type requestedType);
@@ -38,6 +39,11 @@ namespace Common
         public void Info(string message)
         {
             logger.Info(message);
+        }
+
+        public void Warn(string message)
+        {
+            logger.Warn(message);
         }
 
         public void Error(string message)

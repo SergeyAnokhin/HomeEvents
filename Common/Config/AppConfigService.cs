@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using Common.Config;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace Common
 {
@@ -10,12 +11,24 @@ namespace Common
     {
         private ILogService log;
         private PrivateConfig privateConfig;
+        private Dictionary<string, object> privateProperties = new Dictionary<string, object>();
 
         public AppConfigService(ILogService log)
         {
             this.log = log.Init(GetType());
 
-            privateConfig = GetConfig<Config.PrivateConfig>("PrivateConfig", true);
+            privateConfig = GetConfig<PrivateConfig>("PrivateConfig", true);
+            if(privateConfig != null)
+            {
+                foreach(var property in privateConfig.GetType().GetProperties())
+                {
+                    privateProperties[property.Name] = property.GetMethod.Invoke(privateConfig, null);
+                }
+            }
+            else
+            {
+                log.Warn("Private config not found. OverrideIfExist will not working. create PrivateConfig.config.json for overrided properties");
+            }
         }
 
         public T GetModuleConfig<T>()
@@ -24,7 +37,7 @@ namespace Common
             return GetConfig<T>(name);
         }
 
-        private static T GetConfig<T>(string filename, bool ignoreIfNotExist = false)
+        private T GetConfig<T>(string filename, bool ignoreIfNotExist = false)
         {
             var directory = new DirectoryInfo(Environment.CurrentDirectory);
             var pattern = $"{filename}.config.json";
@@ -46,11 +59,22 @@ namespace Common
 
         }
 
-        private static void ApplyPrivateConfig<T>(T config)
+        private void ApplyPrivateConfig<T>(T config)
         {
             foreach(var property in typeof(T).GetProperties())
             {
-                var attr = property.GetCustomAttributes(typeof(OverrideIfExistAttribute), false);
+                var attrs = property.GetCustomAttributes(typeof(CanPrivateOverride), false);
+                if (!attrs.Any()) continue;
+
+                var attr = attrs.Cast<CanPrivateOverride>().First();
+                var name = attr.PropertyName;
+                if (!privateProperties.ContainsKey(name)) {
+                    log.Warn($"Value nor found in private config : {name}");
+                    continue;
+                };
+                var overrideValue = privateProperties[name];
+
+                property.SetMethod.Invoke(config, new[] { overrideValue });
             }
         }
     }
