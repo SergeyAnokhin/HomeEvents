@@ -81,6 +81,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Brain\Services\AccordNetApiAdapter.cs" />
+    <Compile Include="Brain\Services\IApiAdapter.cs" />
+    <Compile Include="Brain\Services\SkLearnApiAdapter.cs" />
+    <Compile Include="Brain\Services\TensorFlowApiAdapter.cs" />
     <Compile Include="Config\Config.cs" />
     <Compile Include="Brain\BrainInfo.cs" />
     <Compile Include="Brain\BrainPrediction.cs" />
