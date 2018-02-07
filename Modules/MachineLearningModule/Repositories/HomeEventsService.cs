@@ -34,7 +34,6 @@ namespace MachineLearningModule.Repositories
                 Field = "@timestamp",
                 LessThanOrEqualTo = endDateTime.ToUniversalTime(),
                 GreaterThanOrEqualTo = endDateTime.ToUniversalTime().AddSeconds(-config.EventsWindowsSeconds),
-                // TimeZone = "+01:00"
             };
 
             var boolQuery = new BoolQuery
@@ -59,12 +58,15 @@ namespace MachineLearningModule.Repositories
                 }
             };
 
-            var result = elastic.Request<ElasticSearchEvent>(searchRequest).ToList();
+            var result = elastic
+                .Request<ElasticSearchEvent>(searchRequest)
+                .Select(ConvertToLocalDateTime)
+                .ToList();
             result.ForEach(r => log.Debug(r.ToString()));
 
             return result.Select(r => new HomeEvent
             {
-                DateTime = TimeZoneInfo.ConvertTimeFromUtc(r.timestamp, TimeZoneInfo.Local),
+                DateTime = r.timestamp,
                 Id = r.Id,
                 Sensor = r.sensor.display,
                 Status = r.status,
@@ -72,9 +74,24 @@ namespace MachineLearningModule.Repositories
             });
         }
 
-        public List<HomeEvent> GetEvents(List<string> ids)
+        private static ElasticSearchEvent ConvertToLocalDateTime(ElasticSearchEvent r)
         {
-            throw new NotImplementedException();
+            r.timestamp = TimeZoneInfo.ConvertTimeFromUtc(r.timestamp, TimeZoneInfo.Local);
+            return r;
+        }
+
+        public IEnumerable<HomeEvent> GetEvents(List<string> ids)
+        {
+            var result = elastic.Request<ElasticSearchEvent>(q => q);
+            return result.Select(r => new HomeEvent
+            {
+                DateTime = r.timestamp,
+                Id = r.Id,
+                Sensor = r.sensor.display,
+                Status = r.status,
+                SensorType = r.sensor.type,
+            });
+
         }
     }
 }

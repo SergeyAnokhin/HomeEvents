@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Common;
@@ -30,6 +31,11 @@ namespace MachineLearningTests
                 }
                 return h._source;
             });
+        }
+
+        public IEnumerable<T> Request<T>(Func<SearchDescriptor<T>, ISearchRequest> func) where T : class
+        {
+            throw new NotImplementedException();
         }
     }
 

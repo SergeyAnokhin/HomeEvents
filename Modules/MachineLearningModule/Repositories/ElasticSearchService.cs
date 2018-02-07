@@ -20,21 +20,9 @@ namespace MachineLearningModule.Repositories
 
         public IEnumerable<T> Request<T>(SearchRequest searchRequest) where T : class
         {
+            var client = Connect();
             searchRequest.Size = searchRequest.Size ?? 500;
 
-            var settings = new ConnectionSettings(
-                new Uri(config.ElasticSearchService.Hosts.Last())
-            );
-
-            log.Info($"Connect to elastic search : {config.ElasticSearchService.Hosts.Last()}");
-            if (config.ElasticSearchService.IsEnableDebuggingRequestResponse)
-            {
-                settings.DisableDirectStreaming()
-                    .PrettyJson();
-            }
-
-            var client = new ElasticClient(settings);
-            
             var response = client.Search<T>(searchRequest);
             if (response.ServerError != null)
             {
@@ -53,6 +41,33 @@ namespace MachineLearningModule.Repositories
             }
 
             return response.Documents;
+        }
+
+        public IEnumerable<T> Request<T>(Func<SearchDescriptor<T>, ISearchRequest> func) where T : class
+        {
+            var client = Connect();
+            // searchRequest.Size = searchRequest.Size ?? 500;
+
+            var response = client.Search<T>(func);
+
+            return response.Documents;
+        }
+
+        private ElasticClient Connect()
+        {
+            var settings = new ConnectionSettings(
+                new Uri(config.ElasticSearchService.Hosts.Last())
+            );
+
+            log.Info($"Connect to elastic search : {config.ElasticSearchService.Hosts.Last()}");
+            if (config.ElasticSearchService.IsEnableDebuggingRequestResponse)
+            {
+                settings.DisableDirectStreaming()
+                    .PrettyJson();
+            }
+
+            var client = new ElasticClient(settings);
+            return client;
         }
     }
 }

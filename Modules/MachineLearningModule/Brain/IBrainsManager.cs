@@ -7,6 +7,6 @@ namespace MachineLearningModule.Brain
     {
         IEnumerable<BrainInfo> GetActiveBrains();
         IEnumerable<BrainPrediction> Predict(List<HomeEvent> events);
-        IEnumerable<BrainPrediction> AddToModel(List<HomeEvent> events, string className);
+        IEnumerable<BrainPrediction> AddToModel(IEnumerable<HomeEvent> events, string className);
     }
 }
