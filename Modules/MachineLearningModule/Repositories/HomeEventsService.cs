@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Common;
 using Common.Config;
+using MachineLearningModule.Events;
+using Microsoft.Practices.ObjectBuilder2;
 using Nest;
 
 namespace MachineLearningModule.Repositories
@@ -19,7 +22,7 @@ namespace MachineLearningModule.Repositories
             this.elastic = elastic;
         }
 
-        public IEnumerable<ElasticSearchEvent> GetEventsWindow(DateTime endDateTime)
+        public IEnumerable<HomeEvent> GetEventsWindow(DateTime endDateTime)
         {
             var match = new MatchPhraseQuery
             {
@@ -31,7 +34,8 @@ namespace MachineLearningModule.Repositories
             {
                 Field = "@timestamp",
                 LessThanOrEqualTo = endDateTime,
-                GreaterThanOrEqualTo = endDateTime.AddSeconds(-config.EventsWindowsSeconds)
+                GreaterThanOrEqualTo = endDateTime.AddSeconds(-config.EventsWindowsSeconds),
+                TimeZone = "+01:00"
             };
 
             var boolQuery = new BoolQuery
@@ -56,8 +60,17 @@ namespace MachineLearningModule.Repositories
                 }
             };
 
-            var result = elastic.Request<ElasticSearchEvent>(searchRequest);
-            return result;
+            var result = elastic.Request<ElasticSearchEvent>(searchRequest).ToList();
+            result.ForEach(r => log.Debug(r.ToString()));
+
+            return result.Select(r => new HomeEvent
+            {
+                DateTime = r.timestamp,
+                Id = r.Id,
+                Sensor = r.sensor.display,
+                Status = r.status,
+                SensorType = r.sensor.type,
+            });
         }
     }
 }

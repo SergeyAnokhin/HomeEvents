@@ -26,9 +26,9 @@ namespace MachineLearningTests
             var elastic = new ElasticSearchService(config, log);
             IHomeEventsService target = new HomeEventsService(config, elastic, log); 
 
-            var result = target.GetEventsWindow(new DateTime(2018, 02, 03, 16, 04, 00));
-            Assert.AreEqual(23, result.Count());
-            Assert.IsNotNull(result.First()._id);
+            var result = target.GetEventsWindow(new DateTime(2018, 02, 03, 17, 04, 00));
+            Assert.AreEqual(29, result.Count());
+            Assert.IsNotNull(result.First().Id);
         }
     }
 }

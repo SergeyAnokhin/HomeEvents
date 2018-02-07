@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using Common;
+using MachineLearningModule.Events;
 
 namespace MachineLearningModule.Repositories
 {
     public interface IHomeEventsService : IService
     {
-        IEnumerable<ElasticSearchEvent> GetEventsWindow(DateTime dateTime);
+        IEnumerable<HomeEvent> GetEventsWindow(DateTime dateTime);
     }
 }

@@ -25,9 +25,13 @@ namespace MachineLearningModule.Repositories
             var settings = new ConnectionSettings(
                 new Uri(config.ElasticSearchService.Hosts.Last())
             );
+
             log.Info($"Connect to elastic search : {config.ElasticSearchService.Hosts.Last()}");
-            if(config.ElasticSearchService.IsEnableDebuggingRequestResponse)
-                settings.DisableDirectStreaming();
+            if (config.ElasticSearchService.IsEnableDebuggingRequestResponse)
+            {
+                settings.DisableDirectStreaming()
+                    .PrettyJson();
+            }
 
             var client = new ElasticClient(settings);
             
@@ -37,6 +41,17 @@ namespace MachineLearningModule.Repositories
                 throw new Exception(response.ServerError.Error.Reason);
             }
             log.Info(response.DebugInformation);
+
+            if (typeof(T).GetInterfaces().Contains(typeof(IHasId)))
+            {
+                return response.Hits.Select(hit =>
+                {
+                    var run = hit.Source;
+                    (run as IHasId).Id = hit.Id;
+                    return run;
+                });
+            }
+
             return response.Documents;
         }
     }

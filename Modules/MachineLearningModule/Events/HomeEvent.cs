@@ -8,5 +8,11 @@ namespace MachineLearningModule.Events
         public DateTime DateTime { get; set; }
         public string Sensor { get; set; }
         public string Status { get; set; }
+        public string SensorType { get; set; }
+
+        public override string ToString()
+        {
+            return $"[{this.GetType().Name}: @{DateTime:HH:mm:ss} {Sensor} : '{Status}' #ID: {Id}]";
+        }
     }
 }

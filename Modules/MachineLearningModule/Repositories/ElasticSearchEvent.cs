@@ -1,12 +1,13 @@
 ﻿using System;
+using Common;
 using Nest;
 
 namespace MachineLearningModule.Repositories
 {
-    [ElasticsearchType(IdProperty = "_id")]
-    public class ElasticSearchEvent
+    [ElasticsearchType(IdProperty = "Id")]
+    public class ElasticSearchEvent : IHasId
     {
-        public string _id { get; set; }
+        public string Id { get; set; }
         [Date(Name = "@timestamp")]
         public DateTime timestamp { get; set; }
         public ElasticSearchEventSensor sensor { get; set; }
@@ -15,7 +16,7 @@ namespace MachineLearningModule.Repositories
 
         public override string ToString()
         {
-            return $"[{this.GetType().Name}: @{timestamp:HH:mm:ss} {sensor} : '{status}' ({value})]";
+            return $"[{this.GetType().Name}: @{timestamp:HH:mm:ss} {sensor} : '{status}' ({value}) #ID: {Id}]";
         }
     }
 

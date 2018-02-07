@@ -21,13 +21,13 @@ namespace MachineLearningModule
             container.RegisterTypes(
                 AllClasses.FromAssemblies(currentAssembly).
                     Where(type => typeof(IService).IsAssignableFrom(type)),
-                WithMappings.FromAllInterfaces,
-                WithName.TypeName,
+                WithMappings.FromMatchingInterface,
+                WithName.Default,
                 WithLifetime.Transient);
 
             foreach (var registration in container.Registrations)
             {
-                logger.Info($"UNITY: {registration.RegisteredType.Name} => {registration.MappedToType.Name}");
+                logger.Info($"UNITY: {registration.RegisteredType.Name} => {registration.MappedToType.Name} ({registration.Name})");
             }
         }
     }
