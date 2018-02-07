@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using MachineLearningModule.Brain;
 using MachineLearningModule.Repositories;
 
 namespace MachineLearningModule.Events
@@ -7,10 +8,12 @@ namespace MachineLearningModule.Events
     public class EventsManager : IEventsManager
     {
         private readonly IHomeEventsService homeEvents;
+        private readonly IBrainsManager brainsManager;
 
-        public EventsManager(IHomeEventsService homeEvents)
+        public EventsManager(IHomeEventsService homeEvents, IBrainsManager brainsManager)
         {
             this.homeEvents = homeEvents;
+            this.brainsManager = brainsManager;
         }
 
         public IEnumerable<HomeEvent> GetEventsForSelect(string id)
@@ -23,9 +26,10 @@ namespace MachineLearningModule.Events
             return homeEvents.GetEventsWindow(dateTime);
         }
 
-        public bool SendToBrain(List<string> ids, string className)
+        public void SendToBrain(List<string> ids, string className)
         {
-            throw new NotImplementedException();
+            var events = homeEvents.GetEvents(ids);
+            brainsManager.AddToModel(events, className);
         }
     }
 }

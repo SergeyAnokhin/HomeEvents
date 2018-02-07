@@ -1,6 +1,6 @@
 ﻿namespace MachineLearningModule.Brain.Services
 {
-    class TensorFlowApiAdapter : IApiAdapter
+    class SkLearnBrainApiAdapter : IBrainApiAdapter
     {
     }
 }

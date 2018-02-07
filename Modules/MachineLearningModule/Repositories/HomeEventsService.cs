@@ -4,7 +4,6 @@ using System.Linq;
 using Common;
 using Common.Config;
 using MachineLearningModule.Events;
-using Microsoft.Practices.ObjectBuilder2;
 using Nest;
 
 namespace MachineLearningModule.Repositories
@@ -71,6 +70,11 @@ namespace MachineLearningModule.Repositories
                 Status = r.status,
                 SensorType = r.sensor.type,
             });
+        }
+
+        public List<HomeEvent> GetEvents(List<string> ids)
+        {
+            throw new NotImplementedException();
         }
     }
 }

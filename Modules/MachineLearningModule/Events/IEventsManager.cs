@@ -8,6 +8,6 @@ namespace MachineLearningModule.Events
     {
         IEnumerable<HomeEvent> GetEventsForSelect(string id);
         IEnumerable<HomeEvent> GetEventsForSelect(DateTime dateTime);
-        bool SendToBrain(List<string> ids, string className);
+        void SendToBrain(List<string> ids, string className);
     }
 }

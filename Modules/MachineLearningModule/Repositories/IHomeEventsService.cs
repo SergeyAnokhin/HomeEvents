@@ -8,5 +8,6 @@ namespace MachineLearningModule.Repositories
     public interface IHomeEventsService : IService
     {
         IEnumerable<HomeEvent> GetEventsWindow(DateTime dateTime);
+        List<HomeEvent> GetEvents(List<string> ids);
     }
 }
