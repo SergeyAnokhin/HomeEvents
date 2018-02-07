@@ -23,6 +23,7 @@ namespace MachineLearningTests
         public void BasicTest()
         {
             var config = new AppConfigService(log);
+
             var elastic = new ElasticSearchService(config, log);
             IHomeEventsService target = new HomeEventsService(config, elastic, log); 
 

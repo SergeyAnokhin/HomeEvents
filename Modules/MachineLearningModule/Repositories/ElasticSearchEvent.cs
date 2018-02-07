@@ -1,6 +1,7 @@
 ﻿using System;
 using Common;
 using Nest;
+using Newtonsoft.Json;
 
 namespace MachineLearningModule.Repositories
 {
@@ -9,6 +10,7 @@ namespace MachineLearningModule.Repositories
     {
         public string Id { get; set; }
         [Date(Name = "@timestamp")]
+        [JsonProperty("@timestamp")]
         public DateTime timestamp { get; set; }
         public ElasticSearchEventSensor sensor { get; set; }
         public float value { get; set; }

@@ -33,9 +33,9 @@ namespace MachineLearningModule.Repositories
             var rangeQuery = new DateRangeQuery
             {
                 Field = "@timestamp",
-                LessThanOrEqualTo = endDateTime,
-                GreaterThanOrEqualTo = endDateTime.AddSeconds(-config.EventsWindowsSeconds),
-                TimeZone = "+01:00"
+                LessThanOrEqualTo = endDateTime.ToUniversalTime(),
+                GreaterThanOrEqualTo = endDateTime.ToUniversalTime().AddSeconds(-config.EventsWindowsSeconds),
+                // TimeZone = "+01:00"
             };
 
             var boolQuery = new BoolQuery
@@ -65,7 +65,7 @@ namespace MachineLearningModule.Repositories
 
             return result.Select(r => new HomeEvent
             {
-                DateTime = r.timestamp,
+                DateTime = TimeZoneInfo.ConvertTimeFromUtc(r.timestamp, TimeZoneInfo.Local),
                 Id = r.Id,
                 Sensor = r.sensor.display,
                 Status = r.status,
