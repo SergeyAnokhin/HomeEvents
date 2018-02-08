@@ -82,7 +82,11 @@ namespace MachineLearningModule.Repositories
 
         public IEnumerable<HomeEvent> GetEvents(List<string> ids)
         {
-            var result = elastic.Request<ElasticSearchEvent>(q => q);
+            Func<SearchDescriptor<ElasticSearchEvent>, ISearchRequest> selector = (d) =>
+                d.Query(q => q.Ids(c =>
+                    c.Values(ids).Name("Get events by IDs : " + ids.ToLog())));
+
+            var result = elastic.Request<ElasticSearchEvent>(selector);
             return result.Select(r => new HomeEvent
             {
                 DateTime = r.timestamp,
