@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using MachineLearningModule.Brain;
 using MachineLearningModule.Repositories;
 
@@ -30,6 +31,12 @@ namespace MachineLearningModule.Events
         {
             var events = homeEvents.GetEvents(ids);
             brainsManager.AddToModel(events, className);
+        }
+
+        public void BrainPredict(List<string> ids)
+        {
+            var events = homeEvents.GetEvents(ids).ToList();
+            brainsManager.Predict(events);
         }
     }
 }

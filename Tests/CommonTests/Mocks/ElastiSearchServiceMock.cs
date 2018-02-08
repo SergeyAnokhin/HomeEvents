@@ -7,9 +7,9 @@ using MachineLearningModule.Repositories;
 using Nest;
 using Newtonsoft.Json;
 
-namespace MachineLearningTests
+namespace CommonTests.Mocks
 {
-    class ElastiSearchServiceMock : IElasticSearchService
+    public class ElastiSearchServiceMock : IElasticSearchService
     {
         private readonly Stack<string> responseDataFiles;
         public ElastiSearchServiceMock(IEnumerable<string> responseDataFiles)
@@ -19,7 +19,7 @@ namespace MachineLearningTests
 
         public IEnumerable<T> Request<T>(SearchRequest searchRequest) where T : class
         {
-            var file = responseDataFiles.Peek();
+            var file = responseDataFiles.Pop();
             var body = File.ReadAllText(file);
             var result = JsonConvert.DeserializeObject<ElasticSearchResponse<T>>(body);
             return result.hits.hits.Select(h =>

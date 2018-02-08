@@ -10,6 +10,8 @@ namespace MachineLearningModule.Events
         public string Status { get; set; }
         public string SensorType { get; set; }
 
+        public string TypeId => $"[{SensorType}]{Sensor}={Status}";
+
         public override string ToString()
         {
             return $"[{this.GetType().Name}: @{DateTime:HH:mm:ss} {Sensor} : '{Status}' #ID: {Id}]";

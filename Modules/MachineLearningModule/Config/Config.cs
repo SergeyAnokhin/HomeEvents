@@ -1,5 +1,4 @@
-﻿using Common;
-using Common.Config;
+﻿using Common.Config;
 
 namespace MachineLearningModule.Config
 {
@@ -8,6 +7,14 @@ namespace MachineLearningModule.Config
         public int EventsWindowsSeconds { get; set; }
         public int EventsWindowsStep { get; set; }
         public ElasticSearchServiceConfig ElasticSearchService { get; set; }
+        public SkLearnBrainApiAdapterConfig SkLearnBrainApiAdapterConfig { get; set; }
+    }
+
+    public class SkLearnBrainApiAdapterConfig
+    {
+        public string[] EventsOrder { get; set; }
+        public int ImageStepSeconds { get; set; }
+        public int TotalImageSteps { get; set; }
     }
 
     public class ElasticSearchServiceConfig

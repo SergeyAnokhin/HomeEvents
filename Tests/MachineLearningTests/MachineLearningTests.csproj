@@ -84,15 +84,17 @@
   </Choose>
   <ItemGroup>
     <Compile Include="ElasticSearchServiceTests.cs" />
-    <Compile Include="ElastiSearchServiceMock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PythonAdapterTest.cs" />
     <Compile Include="EventsManagerIntegrationTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Data\elasticRequestEvents.json" />
-    <None Include="Data\elasticResponseEvents.json">
+    <None Include="Data\apiMockMockResponseData\predict.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\ElastiSearchServiceMock\RequestEvents.json" />
+    <None Include="Data\ElastiSearchServiceMock\ResponseEvents.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Data\eventsTestHelper.xlsx" />
@@ -107,6 +109,10 @@
     <ProjectReference Include="..\..\Modules\MachineLearningModule\MachineLearningModule.csproj">
       <Project>{175e4a57-8e7d-46ff-89b7-f27262f6501f}</Project>
       <Name>MachineLearningModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonTests\CommonTests.csproj">
+      <Project>{52318bcd-03d8-4de2-a9e6-67cff723741b}</Project>
+      <Name>CommonTests</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

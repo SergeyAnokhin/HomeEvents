@@ -9,5 +9,6 @@ namespace MachineLearningModule.Events
         IEnumerable<HomeEvent> GetEventsForSelect(string id);
         IEnumerable<HomeEvent> GetEventsForSelect(DateTime dateTime);
         void SendToBrain(List<string> ids, string className);
+        void BrainPredict(List<string> ids);
     }
 }
