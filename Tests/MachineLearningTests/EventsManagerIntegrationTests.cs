@@ -27,7 +27,11 @@ namespace MachineLearningTests
         [TestMethod]
         public void BasicTest()
         {
-            var esMock = new ElastiSearchServiceMock(new[] {@"Data\elasticResponseEvents.json"});
+            var esMock = new ElastiSearchServiceMock(new[]
+            {
+                @"Data\elasticResponseEvents.json",
+                @"Data\elasticResponseEvents.json"
+            });
             container.RegisterInstance<IElasticSearchService>(esMock);
 
             var eventManager = container.Resolve<IEventsManager>();

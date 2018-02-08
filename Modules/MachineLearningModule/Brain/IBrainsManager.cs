@@ -1,9 +1,10 @@
 using System.Collections.Generic;
+using Common;
 using MachineLearningModule.Events;
 
 namespace MachineLearningModule.Brain
 {
-    public interface IBrainsManager
+    public interface IBrainsManager : IService
     {
         IEnumerable<BrainInfo> GetActiveBrains();
         IEnumerable<BrainPrediction> Predict(List<HomeEvent> events);

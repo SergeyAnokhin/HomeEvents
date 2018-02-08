@@ -76,11 +76,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiService.cs" />
     <Compile Include="CommonModule.cs" />
     <Compile Include="Config\AppConfigService.cs" />
     <Compile Include="Config\IAppConfigService.cs" />
     <Compile Include="Config\PrivateConfig.cs" />
     <Compile Include="EnumerableExtensions.cs" />
+    <Compile Include="IApiService.cs" />
     <Compile Include="IHasId.cs" />
     <Compile Include="ILogService.cs" />
     <Compile Include="IService.cs" />
