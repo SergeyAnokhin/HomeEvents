@@ -52,13 +52,13 @@ namespace Common.Config
             var body = File.ReadAllText(file.FullName);
 
             var config = JsonConvert.DeserializeObject<T>(body);
-            ApplyPrivateConfig(config);
+            ApplyPrivateConfig(config, file.FullName);
 
             return config;
 
         }
 
-        private void ApplyPrivateConfig(object config)
+        private void ApplyPrivateConfig(object config, string fileName)
         {
             var typeOfConfig = config.GetType();
             foreach (var property in typeOfConfig.GetProperties())
@@ -67,7 +67,11 @@ namespace Common.Config
                 if (property.PropertyType.Assembly == typeOfConfig.Assembly)
                 {
                     var subConfig = property.GetMethod.Invoke(config, null);
-                    ApplyPrivateConfig(subConfig);
+                    if (subConfig == null)
+                    {
+                        log.Warn($"Can't found in <a>{fileName}</a> config : <b>{property.GetMethod}</b>");
+                    }else
+                        ApplyPrivateConfig(subConfig, fileName);
                 }
                 if (!attrs.Any()) continue;
 

@@ -20,7 +20,7 @@ namespace MachineLearningTests
         public void Init()
         {
             container = new UnityContainer();
-            var common = new Common.CommonModule(container);
+            var common = new CommonModule(container);
             common.Initialize();
 
             module = new MachineLearningModule.MachineLearningModule(container);
@@ -52,8 +52,16 @@ namespace MachineLearningTests
 
             var eventManager = container.Resolve<IEventsManager>();
             var events = eventManager.GetEventsForSelect(new DateTime(2018, 02, 03, 17, 04, 00));
-            eventManager.BrainPredict(events.Select(e => e.Id).ToList());
-            eventManager.SendToBrain(events.Select(e => e.Id).ToList(), "MasterCome");
+            var prediction = eventManager.BrainPredict(events.Select(e => e.Id).ToList());
+            var selftest = eventManager.SendToBrain(events.Select(e => e.Id).ToList(), "MasterCome");
+
+            Assert.IsNotNull(prediction);
+            Assert.AreNotEqual(0, prediction.Count());
+
+            Assert.IsNotNull(selftest);
+            Assert.AreNotEqual(0, selftest.Count());
+
+            Assert.Fail("TODO");
         }
     }
 }

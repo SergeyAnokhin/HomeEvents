@@ -35,7 +35,7 @@ namespace CommonTests.Mocks
 
         public IEnumerable<T> Request<T>(Func<SearchDescriptor<T>, ISearchRequest> func) where T : class
         {
-            throw new NotImplementedException();
+            return Request<T>((SearchRequest)null);
         }
     }
 

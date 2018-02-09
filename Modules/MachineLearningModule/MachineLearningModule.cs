@@ -26,9 +26,9 @@ namespace MachineLearningModule
                 WithName.Default,
                 WithLifetime.Transient);
 
-            container.RegisterType<IBrainApiAdapter, SkLearnBrainApiAdapter>();
-            //container.RegisterType<IBrainApiAdapter, TensorFlowBrainApiAdapter>();
-            //container.RegisterType<IBrainApiAdapter, AccordNetBrainApiAdapter>();
+            container.RegisterType<IBrainApiAdapter, SkLearnBrainApiAdapter>("SkLearnBrainApiAdapter");
+            //container.RegisterType<IBrainApiAdapter, TensorFlowBrainApiAdapter>("TensorFlowBrainApiAdapter");
+            //container.RegisterType<IBrainApiAdapter, AccordNetBrainApiAdapter>("AccordNetBrainApiAdapter");
 
             foreach (var registration in container.Registrations)
             {

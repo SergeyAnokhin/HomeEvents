@@ -4,5 +4,10 @@
   "ElasticSearchService": {
     "Hosts": [ "http://windowsserver:9200" ],
     "IsEnableDebuggingRequestResponse": true
-  }
+  },
+  "SkLearnBrainApiAdapterConfig": {
+    "ImageStepSeconds": 30,
+    "TotalImageSteps": 20,
+    "EventsOrder" :  [ "toto" ]  
+  } 
 }
