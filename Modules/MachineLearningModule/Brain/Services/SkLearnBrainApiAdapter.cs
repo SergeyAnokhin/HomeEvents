@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace MachineLearningModule.Brain.Services
 {
-    class SkLearnBrainApiAdapter : IBrainApiAdapter
+    public class SkLearnBrainApiAdapter : IBrainApiAdapter
     {
         private readonly IApiService api;
         private SkLearnBrainApiAdapterConfig config;
@@ -38,7 +38,7 @@ namespace MachineLearningModule.Brain.Services
 
         public BrainPrediction Predict(IEnumerable<HomeEvent> events)
         {
-            var parameter = ToAddToModelParameter(events);
+            var parameter = ConvertToModelImage(events);
             var postData = JsonConvert.SerializeObject(parameter);
             string responseData = api.Request("predict", postData);
             return JsonConvert.DeserializeObject<BrainPrediction>(responseData);
@@ -46,16 +46,16 @@ namespace MachineLearningModule.Brain.Services
 
         public BrainPrediction AddToModel(IEnumerable<HomeEvent> events, string className)
         {
-            var parameter = ToAddToModelParameter(events, className);
+            var parameter = ConvertToModelImage(events, className);
             var postData = JsonConvert.SerializeObject(parameter);
             string responseData = api.Request("add_to_model", postData);
             return JsonConvert.DeserializeObject<BrainPrediction>(responseData);
         }
 
-        public AddToModelApiParameter ToAddToModelParameter(IEnumerable<HomeEvent> events, string className = null)
+        public ModelImage ConvertToModelImage(IEnumerable<HomeEvent> events, string className = null)
         {
             events = events.ToList();
-            return new AddToModelApiParameter
+            return new ModelImage
             {
                 EventsOrderInImage = config.EventsOrder,
                 Image = GetImage(events),
@@ -94,7 +94,7 @@ namespace MachineLearningModule.Brain.Services
         }
     }
 
-    class AddToModelApiParameter
+    public class ModelImage
     {
         public IEnumerable<HomeEvent> HomeEvents { get; set; }
         public int[] Image { get; set; }

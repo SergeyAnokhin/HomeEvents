@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="AppConfigServiceTest.cs" />
     <Compile Include="Mocks\ApiServiceMock.cs" />
+    <Compile Include="Mocks\AppConfigServiceMock.cs" />
     <Compile Include="Mocks\ElastiSearchServiceMock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

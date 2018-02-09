@@ -5,7 +5,6 @@ namespace MachineLearningModule.Config
     public class Config
     {
         public int EventsWindowsSeconds { get; set; }
-        public int EventsWindowsStep { get; set; }
         public ElasticSearchServiceConfig ElasticSearchService { get; set; }
         public SkLearnBrainApiAdapterConfig SkLearnBrainApiAdapterConfig { get; set; }
     }
