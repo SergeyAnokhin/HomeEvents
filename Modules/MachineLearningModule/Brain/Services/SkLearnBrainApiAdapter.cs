@@ -73,9 +73,27 @@ namespace MachineLearningModule.Brain.Services
             var first = orderedEvents.First();
             var rows = orderedEvents
                 .GroupBy(e => GetImageStep(e, first))
-                .Select(g => CreateImageRow(g.ToList()));
+                .ToDictionary(k => k.Key, g => CreateImageRow(g.ToList()));
 
-            return rows.SelectMany(r => r).ToArray();
+            var empty = CreateEmptyImage(config.TotalImageSteps, config.EventsOrder.Length);
+
+            var image = empty
+                .Select(p => GetFromDictionaryIfExist(p.Key, p.Value, rows))
+                .ToList();
+
+            return image.SelectMany(r => r).ToArray();
+        }
+
+        private IEnumerable<int> GetFromDictionaryIfExist(int step, IEnumerable<int> emptyRow, Dictionary<int, List<int>> dict)
+        {
+            if (dict.ContainsKey(step)) return dict[step];
+            return emptyRow.ToList();
+        }
+
+        private Dictionary<int, IEnumerable<int>> CreateEmptyImage(int configTotalImageSteps, int eventsOrderLength)
+        {
+            return Enumerable.Range(0, configTotalImageSteps)
+                .ToDictionary(k => k, v => Enumerable.Repeat(0, eventsOrderLength));
         }
 
         private List<int> CreateImageRow(List<HomeEvent> homeEvents)
