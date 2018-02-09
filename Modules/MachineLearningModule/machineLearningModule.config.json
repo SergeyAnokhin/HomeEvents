@@ -8,6 +8,16 @@
   "SkLearnBrainApiAdapterConfig": {
     "ImageStepSeconds": 30,
     "TotalImageSteps": 20,
-    "EventsOrder" :  [ "toto" ]  
+    "EventsOrder": [
+      "[Motion]FrontWall(.) Foscam=On",
+      "[Door]Hall(0) Door=On",
+      "[Door]Hall(0) Door=Off",
+      "[Motion]Hall(0) Ceiling=On",
+      "[Connection]Mobile(.) Sony Xperia=Off",
+      "[Door]Play(1) Door=On",
+      "[Door]Play(1) Door=Off",
+      "[Motion]Corridor(1) Ceiling=On",
+      "[Motion]Stairs(2) Pipe=On"
+    ]  
   } 
 }

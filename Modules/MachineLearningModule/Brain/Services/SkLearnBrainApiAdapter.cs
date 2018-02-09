@@ -38,7 +38,8 @@ namespace MachineLearningModule.Brain.Services
 
         public BrainPrediction Predict(IEnumerable<HomeEvent> events)
         {
-            var postData = JsonConvert.SerializeObject(events);
+            var parameter = ToAddToModelParameter(events);
+            var postData = JsonConvert.SerializeObject(parameter);
             string responseData = api.Request("predict", postData);
             return JsonConvert.DeserializeObject<BrainPrediction>(responseData);
         }
@@ -51,14 +52,14 @@ namespace MachineLearningModule.Brain.Services
             return JsonConvert.DeserializeObject<BrainPrediction>(responseData);
         }
 
-        public AddToModelApiParameter ToAddToModelParameter(IEnumerable<HomeEvent> events, string className)
+        public AddToModelApiParameter ToAddToModelParameter(IEnumerable<HomeEvent> events, string className = null)
         {
             events = events.ToList();
             return new AddToModelApiParameter
             {
                 EventsOrderInImage = config.EventsOrder,
                 Image = GetImage(events),
-                HomeEvents = events,
+                // HomeEvents = events,
                 ClassName = className
             };
         }

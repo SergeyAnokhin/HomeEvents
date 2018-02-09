@@ -86,7 +86,9 @@ namespace MachineLearningModule.Repositories
                 d.Query(q => q.Ids(c =>
                     c.Values(ids).Name("Get events by IDs : " + ids.ToLog())));
 
-            var result = elastic.Request<ElasticSearchEvent>(selector);
+            var result = elastic
+                .Request(selector)
+                .Select(ConvertToLocalDateTime);
             return result.Select(r => new HomeEvent
             {
                 DateTime = r.timestamp,

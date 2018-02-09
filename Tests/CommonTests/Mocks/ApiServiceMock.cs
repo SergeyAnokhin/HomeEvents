@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using Common;
 
 namespace CommonTests.Mocks
@@ -8,6 +9,12 @@ namespace CommonTests.Mocks
         public Dictionary<string, Stack<string>> MockResponseData { get; set; }
         public Dictionary<string, Stack<string>> MockPostData { get; set; }
 
+        public ApiServiceMock()
+        {
+            MockPostData = new Dictionary<string, Stack<string>>();
+            MockResponseData = new Dictionary<string, Stack<string>>();
+        }
+
         public bool Ping()
         {
             return true;
@@ -15,12 +22,14 @@ namespace CommonTests.Mocks
 
         public string Request(string apiPath, string postData)
         {
-            if (MockPostData[apiPath] == null)
+            if (!MockPostData.ContainsKey(apiPath))
             {
                 MockPostData[apiPath] = new Stack<string>();
             }
             MockPostData[apiPath].Push(postData);
-            return MockResponseData[apiPath].Pop();
+            var file = MockResponseData[apiPath].Pop();
+            return File.ReadAllText(file);
+
         }
     }
 }

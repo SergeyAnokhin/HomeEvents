@@ -33,6 +33,7 @@ namespace MachineLearningTests
             var esMock = new ElastiSearchServiceMock(new[]
             {
                 @"Data\ElastiSearchServiceMock\ResponseEvents.json",
+                @"Data\ElastiSearchServiceMock\ResponseEvents.json",
                 @"Data\ElastiSearchServiceMock\ResponseEvents.json"
             });
             var apiMock = new ApiServiceMock
@@ -42,7 +43,13 @@ namespace MachineLearningTests
                     {
                         "predict", new Stack<string>(new[]
                         {
-                            @"Data\apiMockMockResponseData\predict.json",
+                            @"Data\apiMockMockResponseData\empty.json",
+                        })
+                    },
+                    {
+                        "add_to_model", new Stack<string>(new[]
+                        {
+                            @"Data\apiMockMockResponseData\empty.json",
                         })
                     },
                 }

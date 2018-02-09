@@ -83,6 +83,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BrainApiAdapters\SkLearnBrainApiAdapterTest.cs" />
     <Compile Include="ElasticSearchServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PythonAdapterTest.cs" />
@@ -90,7 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Data\apiMockMockResponseData\predict.json">
+    <None Include="Data\apiMockMockResponseData\empty.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Data\ElastiSearchServiceMock\RequestEvents.json" />
