@@ -36,5 +36,13 @@ namespace Common
         {
             return list.Where(i => i != null);
         }
+
+        public static IEnumerable<IEnumerable<T>> Split<T>(this IEnumerable<T> list, int size)
+        {
+            return list
+                .Select((x, i) => new { Index = i, Value = x })
+                .GroupBy(x => x.Index / size)
+                .Select(x => x.Select(v => v.Value));
+        }
     }
 }

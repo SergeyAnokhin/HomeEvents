@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Common;
 using CommonTests.Mocks;
 using MachineLearningModule.Brain.Services;
@@ -42,17 +41,10 @@ namespace MachineLearningTests.BrainApiAdapters
         [TestMethod]
         public void OneEventTest()
         {
-            var events = new List<HomeEvent>
+            var result = target.ConvertToModelImage(new []
             {
-                new HomeEvent
-                {
-                    DateTime = end,
-                    SensorType = "M",
-                    Sensor = "Event",
-                    Status = "1"
-                }
-            };
-            var result = target.ConvertToModelImage(events);
+                CreateEvent(0, 1),
+            });
 
             Assert.AreEqual(9, result.Image.Length, result.Image.StringJoin());
             CollectionAssert.AreEqual(new []
@@ -60,7 +52,78 @@ namespace MachineLearningTests.BrainApiAdapters
                 1, 0, 0,
                 0, 0, 0,
                 0, 0, 0
-            }, result.Image);
+            }, result.Image, result.ToString());
+        }
+
+        [TestMethod]
+        public void TwoEventTest()
+        {
+            var result = target.ConvertToModelImage(new[]
+            {
+                CreateEvent(0, 1), CreateEvent(0, 3),
+            });
+            CollectionAssert.AreEqual(new[]
+            {
+                1, 0, 1,
+                0, 0, 0,
+                0, 0, 0
+            }, result.Image, result.ToString());
+        }
+
+        [TestMethod]
+        public void TwoSameEventTest()
+        {
+            var result = target.ConvertToModelImage(new[]
+            {
+                CreateEvent(0, 1), CreateEvent(0, 1, 15),
+            });
+            CollectionAssert.AreEqual(new[]
+            {
+                2, 0, 0,
+                0, 0, 0,
+                0, 0, 0
+            }, result.Image, result.ToString());
+        }
+
+        [TestMethod]
+        public void DoublonTest()
+        {
+            var result = target.ConvertToModelImage(new[]
+            {
+                CreateEvent(0, 1), CreateEvent(0, 1),
+            });
+            CollectionAssert.AreEqual(new[]
+            {
+                1, 0, 0,
+                0, 0, 0,
+                0, 0, 0
+            }, result.Image, result.ToString());
+        }
+
+        [TestMethod]
+        public void DiffInStepTest()
+        {
+            var result = target.ConvertToModelImage(new[]
+            {
+                CreateEvent(0, 1), CreateEvent(1, 3, 15),
+            });
+            CollectionAssert.AreEqual(new[]
+            {
+                1, 0, 0,
+                0, 0, 1,
+                0, 0, 0
+            }, result.Image, result.ToString());
+        }
+
+        private HomeEvent CreateEvent(int step, int num, int addInSec = 0)
+        {
+            return new HomeEvent
+            {
+                DateTime = end.AddSeconds(-step * 30 - addInSec),
+                SensorType = "M",
+                Sensor = "Event",
+                Status = num.ToString()
+            };
         }
     }
 

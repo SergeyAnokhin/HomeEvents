@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using Common;
 using Common.Config;
@@ -68,6 +69,8 @@ namespace MachineLearningModule.Brain.Services
         {
             var orderedEvents = events
                 .Where(e => config.EventsOrder.Contains(e.TypeId))
+                .GroupBy(e => e.TypeId + e.DateTime.ToString(CultureInfo.InvariantCulture)) // ignore exactly same event 
+                .Select(e => e.First())
                 .OrderByDescending(e => e.DateTime).ToList();
 
             var first = orderedEvents.First();
@@ -106,7 +109,7 @@ namespace MachineLearningModule.Brain.Services
         private int GetImageStep(HomeEvent homeEvent, HomeEvent first)
         {
             var stepSize = config.ImageStepSeconds;
-            var seconds = (homeEvent.DateTime - first.DateTime).TotalSeconds;
+            var seconds = (first.DateTime - homeEvent.DateTime).TotalSeconds;
             var stepNumber = (int)Math.Floor(seconds / stepSize);
             return stepNumber;
         }
@@ -118,5 +121,14 @@ namespace MachineLearningModule.Brain.Services
         public int[] Image { get; set; }
         public string[] EventsOrderInImage { get; set; }
         public string ClassName { get; set; }
+
+        public override string ToString()
+        {
+            return
+                $"<u>{(ClassName ?? "(undefined)")}</u> => {Environment.NewLine}" +
+                Image.Split(EventsOrderInImage.Length)
+                    .Select(r => r.StringJoin())
+                    .StringJoin(Environment.NewLine);
+        }
     }
 }
