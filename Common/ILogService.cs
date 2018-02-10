@@ -1,11 +1,9 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Reflection;
 using log4net;
 
 namespace Common
 {
-    public interface ILogService
+    public interface ILogService : IService
     {
         void Debug(string message);
         void Info(string message);

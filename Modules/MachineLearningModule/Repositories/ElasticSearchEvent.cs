@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace MachineLearningModule.Repositories
 {
-    [ElasticsearchType(IdProperty = "Id")]
+    [ElasticsearchType(IdProperty = "Id", Name= "measure")]
     public class ElasticSearchEvent : IHasId
     {
         public string Id { get; set; }

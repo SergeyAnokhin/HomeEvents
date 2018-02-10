@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Common;
 using MachineLearningModule.Brain.Services;
+using Microsoft.Practices.ObjectBuilder2;
 using Prism.Modularity;
 using Microsoft.Practices.Unity;
 
@@ -30,10 +31,8 @@ namespace MachineLearningModule
             //container.RegisterType<IBrainApiAdapter, TensorFlowBrainApiAdapter>("TensorFlowBrainApiAdapter");
             //container.RegisterType<IBrainApiAdapter, AccordNetBrainApiAdapter>("AccordNetBrainApiAdapter");
 
-            foreach (var registration in container.Registrations)
-            {
-                logger.Info($"UNITY: {registration.RegisteredType.Name} => {registration.MappedToType.Name} ({registration.Name})");
-            }
+            container.Registrations.ForEach(r =>
+                logger.Info($"[Register] <b>{r.RegisteredType.Name}</b> => <b>{r.MappedToType.Name}</b> (<u>{r.Name}</u>)"));
         }
     }
 }

@@ -15,6 +15,9 @@ namespace CommonTests.Mocks
             MockResponseData = new Dictionary<string, Stack<string>>();
         }
 
+        public void Config(ApiServiceConfig config)
+        {}
+
         public bool Ping()
         {
             return true;
@@ -31,5 +34,7 @@ namespace CommonTests.Mocks
             return File.ReadAllText(file);
 
         }
+
+        public string EntryPoint { get; set; }
     }
 }

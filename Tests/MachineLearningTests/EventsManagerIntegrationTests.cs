@@ -11,7 +11,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace MachineLearningTests
 {
     [TestClass]
-    public class EventsManagerIntegrationTests
+    public class EventsManagerIntegrationTests : AMockTest
     {
         private UnityContainer container;
         private MachineLearningModule.MachineLearningModule module;
@@ -54,11 +54,16 @@ namespace MachineLearningTests
                     },
                 }
             };
-            container.RegisterInstance<IElasticSearchService>(esMock);
-            container.RegisterInstance<IApiService>(apiMock);
+            if (IsUseMock)
+            {
+                container.RegisterInstance<IElasticSearchService>(esMock);
+                container.RegisterInstance<IApiService>(apiMock);
+            }
 
             var eventManager = container.Resolve<IEventsManager>();
-            var events = eventManager.GetEventsForSelect(new DateTime(2018, 02, 03, 17, 04, 00));
+
+            // scenario
+            var events = eventManager.GetEventsForSelect(new DateTime(2018, 02, 03, 17, 04, 00)).ToList();
             var prediction = eventManager.BrainPredict(events.Select(e => e.Id).ToList());
             var selftest = eventManager.SendToBrain(events.Select(e => e.Id).ToList(), "MasterCome");
 

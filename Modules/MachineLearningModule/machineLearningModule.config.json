@@ -4,6 +4,12 @@
     "Hosts": [ "http://windowsserver:9200" ],
     "IsEnableDebuggingRequestResponse": true
   },
+  "ApiConfigs": [
+    {
+      "ApiName": "SkLearnBrainApiAdapter",
+      "EntryPoints": [ "http://127.0.0.1:5000" ]  
+    }
+  ],
   "SkLearnBrainApiAdapterConfig": {
     "ImageStepSeconds": 30,
     "TotalImageSteps": 20,
@@ -17,6 +23,6 @@
       "[Door]Play(1) Door=Off",
       "[Motion]Corridor(1) Ceiling=On",
       "[Motion]Stairs(2) Pipe=On"
-    ]  
+    ]
   } 
 }

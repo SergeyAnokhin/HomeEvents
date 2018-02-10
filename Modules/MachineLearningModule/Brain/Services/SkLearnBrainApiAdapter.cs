@@ -10,34 +10,30 @@ using Newtonsoft.Json;
 
 namespace MachineLearningModule.Brain.Services
 {
-    public class SkLearnBrainApiAdapter : IBrainApiAdapter
+    public class SkLearnBrainApiAdapter : ABrainApiAdapter
     {
-        private readonly IApiService api;
-        private SkLearnBrainApiAdapterConfig config;
+        private SkLearnBrainApiAdapterConfig config => Config.SkLearnBrainApiAdapterConfig;
 
-        public SkLearnBrainApiAdapter(IApiService api, IAppConfigService configService)
+        public SkLearnBrainApiAdapter(IApiService api, IAppConfigService configService) : base(api, configService)
         {
-            this.api = api;
-            var moduleConfig = configService.GetModuleConfig<Config.Config>();
-            config = moduleConfig.SkLearnBrainApiAdapterConfig;
         }
 
-        public bool IsActive()
+        public override bool IsActive()
         {
             return api.Ping();
         }
 
-        public BrainInfo GetBrainInfo()
+        public override BrainInfo GetBrainInfo()
         {
             return new BrainInfo
             {
-                Api = "http://127.0.0.1:0000", // TODO
+                Api = api.EntryPoint, // TODO
                 Name = "Sklearn",
                 SelfScore = float.NaN // TODO
             };
         }
 
-        public BrainPrediction Predict(IEnumerable<HomeEvent> events)
+        public override BrainPrediction Predict(IEnumerable<HomeEvent> events)
         {
             var parameter = ConvertToModelImage(events);
             var postData = JsonConvert.SerializeObject(parameter);
@@ -45,7 +41,7 @@ namespace MachineLearningModule.Brain.Services
             return JsonConvert.DeserializeObject<BrainPrediction>(responseData);
         }
 
-        public BrainPrediction AddToModel(IEnumerable<HomeEvent> events, string className)
+        public override BrainPrediction AddToModel(IEnumerable<HomeEvent> events, string className)
         {
             var parameter = ConvertToModelImage(events, className);
             var postData = JsonConvert.SerializeObject(parameter);

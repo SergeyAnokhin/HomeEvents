@@ -45,7 +45,7 @@ namespace MachineLearningModule.Repositories
                 }
             };
 
-            var searchRequest = new SearchRequest
+            var searchRequest = new SearchRequest(Indices.Parse("history-*"))
             {
                 Query = boolQuery,
                 Sort = new List<ISort>()
@@ -83,8 +83,10 @@ namespace MachineLearningModule.Repositories
         public IEnumerable<HomeEvent> GetEvents(List<string> ids)
         {
             Func<SearchDescriptor<ElasticSearchEvent>, ISearchRequest> selector = (d) =>
-                d.Query(q => q.Ids(c =>
-                    c.Values(ids).Name("Get events by IDs : " + ids.ToLog())));
+                d.Index("history-*")
+
+                    .Query(q => q.Ids(c =>
+                        c.Values(ids).Name("Get events by IDs : " + ids.ToLog())));
 
             var result = elastic
                 .Request(selector)

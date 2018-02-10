@@ -5,15 +5,19 @@ using System.Net;
 
 namespace Common
 {
-    class ApiService : IApiService
+    public class ApiService : IApiService
     {
         private readonly ILogService log;
-        private readonly ApiServiceConfig config;
-        private string entryPoint = string.Empty;
+        private ApiServiceConfig config;
+        public string EntryPoint { get; set; }
 
-        public ApiService(ILogService logService, ApiServiceConfig config)
+        public ApiService(ILogService logService)
         {
             this.log = logService.Init(GetType());
+        }
+
+        public void Config(ApiServiceConfig config)
+        {
             this.config = config;
         }
 
@@ -31,18 +35,18 @@ namespace Common
                 }
                 catch (Exception e)
                 {
-                    log.Debug($"Can't connect to {entryPoint}/Hello : " + e.Message);
+                    log.Debug($"Can't connect to <a href='{entryPoint}/Hello'>{entryPoint}/Hello</a> : " + e.Message);
                 }
             }
 
             if (!activeEntryPoints.Any())
             {
-                log.Warn($"Can't connect to API : {config.ApiName} used: {config.EntryPoints.StringJoin()}");
+                log.Warn($"Can't connect to API : <b>{config.ApiName}</b> used: {config.EntryPoints.StringJoin()}");
                 return false;
             }
 
-            log.Info($"ApiAdapter {config.ApiName} will use {entryPoint}");
-            entryPoint = activeEntryPoints.First();
+            EntryPoint = activeEntryPoints.First();
+            log.Info($"ApiAdapter {config.ApiName} will use <a href='{EntryPoint}'>{EntryPoint}</a>");
             return true;
         }
 
