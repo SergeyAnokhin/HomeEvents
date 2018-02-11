@@ -14,7 +14,7 @@ namespace Common.Config
 
         public AppConfigService(ILogService log)
         {
-            this.log = log.Init(GetType());
+            this.log = log.Init(GetType(), "CONFIG");
 
             privateConfig = GetConfig<PrivateConfig>("PrivateConfig", true);
             if(privateConfig != null)

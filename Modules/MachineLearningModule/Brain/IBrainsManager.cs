@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Common;
+using MachineLearningModule.Brain.Model;
 using MachineLearningModule.Events;
 
 namespace MachineLearningModule.Brain
@@ -7,7 +8,7 @@ namespace MachineLearningModule.Brain
     public interface IBrainsManager : IService
     {
         IEnumerable<BrainInfo> GetActiveBrains();
-        IEnumerable<BrainPrediction> Predict(List<HomeEvent> events);
-        IEnumerable<BrainPrediction> AddToModel(IEnumerable<HomeEvent> events, string className);
+        IEnumerable<ClassificationPrediction> Predict(List<HomeEvent> events);
+        IEnumerable<ClassificationPrediction> AddToModel(IEnumerable<HomeEvent> events, string className);
     }
 }

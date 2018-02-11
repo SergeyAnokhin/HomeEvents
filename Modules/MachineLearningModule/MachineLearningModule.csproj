@@ -84,12 +84,13 @@
     <Compile Include="Brain\BrainsManager.cs" />
     <Compile Include="Brain\Services\ABrainApiAdapter.cs" />
     <Compile Include="Brain\Services\AccordNetBrainApiAdapter.cs" />
+    <Compile Include="Brain\Model\ClassificationInputData.cs" />
     <Compile Include="Brain\Services\IBrainApiAdapter.cs" />
     <Compile Include="Brain\Services\SkLearnBrainApiAdapter.cs" />
     <Compile Include="Brain\Services\TensorFlowBrainApiAdapter.cs" />
     <Compile Include="Config\Config.cs" />
-    <Compile Include="Brain\BrainInfo.cs" />
-    <Compile Include="Brain\BrainPrediction.cs" />
+    <Compile Include="Brain\Model\BrainInfo.cs" />
+    <Compile Include="Brain\Model\ClassificationPrediction.cs" />
     <Compile Include="Events\EventsManager.cs" />
     <Compile Include="Events\HomeEvent.cs" />
     <Compile Include="Brain\IBrainsManager.cs" />

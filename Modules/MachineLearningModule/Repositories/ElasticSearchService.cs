@@ -15,7 +15,7 @@ namespace MachineLearningModule.Repositories
 
         public ElasticSearchService(IAppConfigService configService, ILogService log)
         {
-            this.log = log.Init(GetType());
+            this.log = log.Init(GetType(), "ElasticSearch");
             config = configService.GetModuleConfig<Config.Config>();
         }
 
@@ -64,7 +64,7 @@ namespace MachineLearningModule.Repositories
             var client = Connect();
             // searchRequest.Size = searchRequest.Size ?? 500;
 
-            var response = client.Search<T>(func);
+            var response = client.Search(func);
             return PostProcessing(response);
         }
 

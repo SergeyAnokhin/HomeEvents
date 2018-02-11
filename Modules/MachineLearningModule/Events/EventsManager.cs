@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using MachineLearningModule.Brain;
+using MachineLearningModule.Brain.Model;
 using MachineLearningModule.Repositories;
 
 namespace MachineLearningModule.Events
@@ -27,13 +28,13 @@ namespace MachineLearningModule.Events
             return homeEvents.GetEventsWindow(dateTime);
         }
 
-        public IEnumerable<BrainPrediction> SendToBrain(List<string> ids, string className)
+        public IEnumerable<ClassificationPrediction> SendToBrain(List<string> ids, string className)
         {
             var events = homeEvents.GetEvents(ids);
             return brainsManager.AddToModel(events, className);
         }
 
-        public IEnumerable<BrainPrediction> BrainPredict(List<string> ids)
+        public IEnumerable<ClassificationPrediction> BrainPredict(List<string> ids)
         {
             var events = homeEvents.GetEvents(ids).ToList();
             return brainsManager.Predict(events);

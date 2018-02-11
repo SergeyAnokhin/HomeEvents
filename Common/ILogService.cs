@@ -11,6 +11,7 @@ namespace Common
         void Error(string message);
         void Fatal(string message);
         ILogService Init(Type requestedType);
+        ILogService Init(Type requestedType, string name);
     }
 
     public class LogService : ILogService
@@ -20,6 +21,13 @@ namespace Common
         static LogService()
         {
             log4net.Config.XmlConfigurator.Configure();
+        }
+
+        public ILogService Init(Type requestedType, string name)
+        {
+            logger = LogManager.GetLogger(name);
+            logger.Info($"<b>{requestedType.Name}</b> ({name}) init");
+            return this;
         }
 
         public ILogService Init(Type requestedType)

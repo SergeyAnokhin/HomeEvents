@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Common;
 using MachineLearningModule.Brain;
+using MachineLearningModule.Brain.Model;
 
 namespace MachineLearningModule.Events
 {
@@ -9,7 +10,7 @@ namespace MachineLearningModule.Events
     {
         IEnumerable<HomeEvent> GetEventsForSelect(string id);
         IEnumerable<HomeEvent> GetEventsForSelect(DateTime dateTime);
-        IEnumerable<BrainPrediction> SendToBrain(List<string> ids, string className);
-        IEnumerable<BrainPrediction> BrainPredict(List<string> ids);
+        IEnumerable<ClassificationPrediction> SendToBrain(List<string> ids, string className);
+        IEnumerable<ClassificationPrediction> BrainPredict(List<string> ids);
     }
 }

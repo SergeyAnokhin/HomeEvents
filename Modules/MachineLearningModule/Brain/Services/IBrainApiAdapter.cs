@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using MachineLearningModule.Events;
+using MachineLearningModule.Brain.Model;
 
 namespace MachineLearningModule.Brain.Services
 {
@@ -7,7 +7,8 @@ namespace MachineLearningModule.Brain.Services
     {
         bool IsActive();
         BrainInfo GetBrainInfo();
-        BrainPrediction Predict(IEnumerable<HomeEvent> events);
-        BrainPrediction AddToModel(IEnumerable<HomeEvent> events, string className);
+        IEnumerable<ClassificationPrediction> Predict(IEnumerable<ClassificationInputData> data);
+        ClassificationPrediction Predict(ClassificationInputData data);
+        IEnumerable<ClassificationPrediction> Fit(IEnumerable<ClassificationInputData> data);
     }
 }

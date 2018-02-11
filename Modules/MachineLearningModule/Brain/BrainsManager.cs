@@ -2,9 +2,9 @@
 using System.Linq;
 using Common;
 using Common.Config;
+using MachineLearningModule.Brain.Model;
 using MachineLearningModule.Brain.Services;
 using MachineLearningModule.Events;
-using Microsoft.Practices.ObjectBuilder2;
 
 namespace MachineLearningModule.Brain
 {
@@ -28,14 +28,18 @@ namespace MachineLearningModule.Brain
             return brainApiAdapters.Select(a => a.GetBrainInfo());
         }
 
-        public IEnumerable<BrainPrediction> Predict(List<HomeEvent> events)
+        public IEnumerable<ClassificationPrediction> Predict(List<HomeEvent> events)
         {
-            return brainApiAdapters.Select(a => a.Predict(events));
+            return brainApiAdapters.Select(a => a.Predict(new ClassificationInputData(events)));
         }
 
-        public IEnumerable<BrainPrediction> AddToModel(IEnumerable<HomeEvent> events, string className)
+        public IEnumerable<ClassificationPrediction> AddToModel(IEnumerable<HomeEvent> events, string className)
         {
-            return brainApiAdapters.Select(a => a.AddToModel(events, className));
+            return brainApiAdapters
+                .SelectMany(a => a.Fit(new List<ClassificationInputData>
+                {
+                    new ClassificationInputData(events, className)
+                }));
         }
     }
 }

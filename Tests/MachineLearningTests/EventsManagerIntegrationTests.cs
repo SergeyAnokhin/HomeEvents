@@ -64,15 +64,21 @@ namespace MachineLearningTests
 
             // scenario
             var events = eventManager.GetEventsForSelect(new DateTime(2018, 02, 03, 17, 04, 00)).ToList();
-            var prediction = eventManager.BrainPredict(events.Select(e => e.Id).ToList());
-            var selftest = eventManager.SendToBrain(events.Select(e => e.Id).ToList(), "MasterCome");
+            var selftest = eventManager.SendToBrain(events.Select(e => e.Id).ToList(), "MasterCome").ToList();
+            var predictions = eventManager.BrainPredict(events.Select(e => e.Id).ToList()).ToList();
 
-            Assert.IsNotNull(prediction);
-            Assert.AreNotEqual(0, prediction.Count());
+            Assert.IsNotNull(predictions);
+            Assert.AreNotEqual(0, predictions.Count);
+            Assert.IsTrue(predictions.All(p => p.Class == "MasterCome"), predictions.StringJoin(Environment.NewLine));
 
             Assert.IsNotNull(selftest);
-            Assert.AreNotEqual(0, selftest.Count());
+            Assert.AreNotEqual(0, selftest.Count);
+            Assert.IsTrue(selftest.All(t => Math.Abs(t.Probability - 1) < float.Epsilon), selftest.StringJoin());
+        }
 
+        [TestMethod]
+        public void MultiSamplesAndOnePredictionTest()
+        {
             Assert.Fail("TODO");
         }
     }

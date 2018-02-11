@@ -84,7 +84,7 @@ namespace MachineLearningModule.Repositories
         {
             Func<SearchDescriptor<ElasticSearchEvent>, ISearchRequest> selector = (d) =>
                 d.Index("history-*")
-
+                    .Size(500)
                     .Query(q => q.Ids(c =>
                         c.Values(ids).Name("Get events by IDs : " + ids.ToLog())));
 

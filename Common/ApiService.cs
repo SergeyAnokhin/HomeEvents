@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Text;
 
 namespace Common
 {
@@ -13,7 +14,7 @@ namespace Common
 
         public ApiService(ILogService logService)
         {
-            this.log = logService.Init(GetType());
+            this.log = logService.Init(GetType(), "API");
         }
 
         public void Config(ApiServiceConfig config)
@@ -52,7 +53,19 @@ namespace Common
 
         public string Request(string apiPath, string postData)
         {
-            throw new System.NotImplementedException();
+            var fullPath = EntryPoint + "/" + apiPath;
+            log.Info($"Request to : <a href='{fullPath}'>{fullPath}</a>");
+            log.Debug("Post data : " + postData.Crop(500));
+            byte[] byteResult;
+            using (var wc = new WebClient())
+            {
+                wc.Headers.Add("Content-Type", "application/json");
+                var byteArray = Encoding.ASCII.GetBytes(postData);
+                byteResult = wc.UploadData(fullPath, "POST", byteArray);
+            }
+            var response = Encoding.ASCII.GetString(byteResult);
+            log.Debug("Response data : " + response.Crop(500));
+            return response;
         }
     }
 

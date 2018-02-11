@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using Common;
 using Common.Config;
+using MachineLearningModule.Brain.Model;
 using MachineLearningModule.Config;
 using MachineLearningModule.Events;
 using Newtonsoft.Json;
@@ -27,26 +28,26 @@ namespace MachineLearningModule.Brain.Services
         {
             return new BrainInfo
             {
-                Api = api.EntryPoint, // TODO
+                Api = api.EntryPoint,
                 Name = "Sklearn",
                 SelfScore = float.NaN // TODO
             };
         }
 
-        public override BrainPrediction Predict(IEnumerable<HomeEvent> events)
+        public override IEnumerable<ClassificationPrediction> Predict(IEnumerable<ClassificationInputData> data)
         {
-            var parameter = ConvertToModelImage(events);
+            var parameter = data.Select(d => ConvertToModelImage(d.Events));
             var postData = JsonConvert.SerializeObject(parameter);
             string responseData = api.Request("predict", postData);
-            return JsonConvert.DeserializeObject<BrainPrediction>(responseData);
+            return JsonConvert.DeserializeObject<List<ClassificationPrediction>>(responseData);
         }
 
-        public override BrainPrediction AddToModel(IEnumerable<HomeEvent> events, string className)
+        public override IEnumerable<ClassificationPrediction> Fit(IEnumerable<ClassificationInputData> data)
         {
-            var parameter = ConvertToModelImage(events, className);
+            var parameter = data.Select(d => ConvertToModelImage(d.Events, d.ClassName));
             var postData = JsonConvert.SerializeObject(parameter);
-            string responseData = api.Request("add_to_model", postData);
-            return JsonConvert.DeserializeObject<BrainPrediction>(responseData);
+            string responseData = api.Request("fit", postData);
+            return JsonConvert.DeserializeObject<List<ClassificationPrediction>>(responseData);
         }
 
         public ModelImage ConvertToModelImage(IEnumerable<HomeEvent> events, string className = null)

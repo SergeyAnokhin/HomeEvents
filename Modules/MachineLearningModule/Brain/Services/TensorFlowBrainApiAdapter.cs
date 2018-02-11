@@ -15,12 +15,12 @@ namespace MachineLearningModule.Brain.Services
     //        throw new System.NotImplementedException();
     //    }
 
-    //    public BrainPrediction Predict(IEnumerable<HomeEvent> events)
+    //    public ClassificationPrediction Predict(IEnumerable<HomeEvent> events)
     //    {
     //        throw new System.NotImplementedException();
     //    }
 
-    //    public BrainPrediction AddToModel(IEnumerable<HomeEvent> events, string className)
+    //    public ClassificationPrediction Fit(IEnumerable<HomeEvent> events, string className)
     //    {
     //        throw new System.NotImplementedException();
     //    }
