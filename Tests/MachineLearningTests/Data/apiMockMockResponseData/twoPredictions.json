@@ -1,0 +1,10 @@
+﻿[
+  {
+    "Class": "MasterCome",
+    "Probability": 0.79
+  },
+  {
+    "Class": "Children",
+    "Probability":  0.11  
+  }
+]

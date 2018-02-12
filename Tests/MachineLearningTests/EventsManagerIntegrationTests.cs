@@ -41,15 +41,15 @@ namespace MachineLearningTests
                 MockResponseData = new Dictionary<string, Stack<string>>
                 {
                     {
-                        "predict", new Stack<string>(new[]
+                        "fit", new Stack<string>(new[]
                         {
-                            @"Data\apiMockMockResponseData\empty.json",
+                            @"Data\apiMockMockResponseData\simplePredictions.json",
                         })
                     },
                     {
-                        "add_to_model", new Stack<string>(new[]
+                        "predict", new Stack<string>(new[]
                         {
-                            @"Data\apiMockMockResponseData\empty.json",
+                            @"Data\apiMockMockResponseData\simplePredictions.json",
                         })
                     },
                 }

@@ -34,7 +34,7 @@ namespace MachineLearningModule.Repositories
             {
                 throw new Exception(response.ServerError.Error.Reason);
             }
-            log.Info(FormatDebugInformation(response.DebugInformation));
+            log.Info(FormatDebugInformation(response));
 
             if (typeof(T).GetInterfaces().Contains(typeof(IHasId)))
             {
@@ -50,13 +50,14 @@ namespace MachineLearningModule.Repositories
             return response.Documents;
         }
 
-        private string FormatDebugInformation(string info)
+        private string FormatDebugInformation<T>(ISearchResponse<T> response) where T : class
         {
+            var info = response.DebugInformation;
             info = info.Replace("# Request:", "<br># <b>Request</b>:<br>");
             var infos = Regex.Split(info, "# Response:");
-            var response = infos[1].Crop(500);
+            var responseTxt = infos[1].Crop(500);
             var request = infos[0].UrlToAFref();
-            return $"{request}<br># <b>Response</b>:<br>{response} ...";
+            return $"{request}<br># <b>Response</b> ({response.Documents.Count}):<br>{responseTxt} ...({responseTxt.Length})";
         }
 
         public IEnumerable<T> Request<T>(Func<SearchDescriptor<T>, ISearchRequest> func) where T : class

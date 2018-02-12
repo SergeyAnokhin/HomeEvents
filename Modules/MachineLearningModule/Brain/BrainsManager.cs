@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Common;
 using Common.Config;
@@ -20,6 +21,10 @@ namespace MachineLearningModule.Brain
             this.brainApiAdapters = brainApiAdapters
                 .Where(a =>  a.IsActive())
                 .ToList();
+            if (this.brainApiAdapters.Count == 0)
+            {
+                throw new NullReferenceException("No active IBrainApiAdapter found. Registered : " + brainApiAdapters.StringJoin());
+            }
             log = logService.Init(GetType());
         }
 
@@ -39,7 +44,7 @@ namespace MachineLearningModule.Brain
                 .SelectMany(a => a.Fit(new List<ClassificationInputData>
                 {
                     new ClassificationInputData(events, className)
-                }));
+                }).ToList());
         }
     }
 }
