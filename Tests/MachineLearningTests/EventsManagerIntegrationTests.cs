@@ -64,7 +64,7 @@ namespace MachineLearningTests
 
             // scenario
             var events = eventManager.GetEventsForSelect(new DateTime(2018, 02, 03, 17, 04, 00)).ToList();
-            var selftest = eventManager.SendToBrain(events.Select(e => e.Id).ToList(), "MasterCome").ToList();
+            var selftest = eventManager.AddToModel(events.Select(e => e.Id).ToList(), "MasterCome").ToList();
             var predictions = eventManager.BrainPredict(events.Select(e => e.Id).ToList()).ToList();
 
             Assert.IsNotNull(predictions);
@@ -79,7 +79,58 @@ namespace MachineLearningTests
         [TestMethod]
         public void MultiSamplesAndOnePredictionTest()
         {
-            Assert.Fail("TODO");
+            var esMock = new ElastiSearchServiceMock(new[]
+            {
+                @"Data\ElastiSearchServiceMock\ResponseEvents.json",
+                @"Data\ElastiSearchServiceMock\ResponseEvents.json",
+                @"Data\ElastiSearchServiceMock\ResponseEvents.json"
+            });
+            var apiMock = new ApiServiceMock
+            {
+                MockResponseData = new Dictionary<string, Stack<string>>
+                {
+                    {
+                        "fit", new Stack<string>(new[]
+                        {
+                            @"Data\apiMockMockResponseData\simplePredictions.json",
+                        })
+                    },
+                    {
+                        "predict", new Stack<string>(new[]
+                        {
+                            @"Data\apiMockMockResponseData\simplePredictions.json",
+                        })
+                    },
+                }
+            };
+            if (IsUseMock)
+            {
+                container.RegisterInstance<IElasticSearchService>(esMock);
+                container.RegisterInstance<IApiService>(apiMock);
+            }
+
+            var eventManager = container.Resolve<IEventsManager>();
+
+            var datesForEndEvent = new Dictionary<DateTime, string>
+            {
+                {new DateTime(2018, 02, 03, 17, 04, 00), "MasterCome"},
+                {new DateTime(2018, 02, 12, 20, 20, 53), "Children"},
+                {new DateTime(2018, 02, 09, 19, 49, 55), "MasterCome"},
+                {new DateTime(2018, 02, 09, 18, 25, 00), "Children"},
+                {new DateTime(2018, 02, 08, 19, 10, 00), "Children"},
+                {new DateTime(2018, 02, 07, 19, 14, 45), "MasterCome"},
+                {new DateTime(2018, 02, 06, 19, 45, 45), "MasterCome"},
+                {new DateTime(2018, 02, 06, 19, 18, 28), "Children"},
+                {new DateTime(2018, 02, 05, 20, 00, 50), "MasterCome"},
+            };
+
+            var events = eventManager.GetEventsForSelect(new DateTime(2018, 02, 03, 17, 04, 00)).ToList();
+            eventManager.AddToModel(datesForEndEvent);
+            var predictions = eventManager.BrainPredict(events.Select(e => e.Id).ToList()).ToList();
+
+            Assert.IsNotNull(predictions);
+            Assert.AreNotEqual(0, predictions.Count);
+            Assert.IsTrue(predictions.All(p => p.Class == "MasterCome"), predictions.StringJoin(Environment.NewLine));
         }
     }
 }

@@ -28,16 +28,28 @@ namespace MachineLearningModule.Events
             return homeEvents.GetEventsWindow(dateTime);
         }
 
-        public IEnumerable<ClassificationPrediction> SendToBrain(List<string> ids, string className)
+        public IEnumerable<ClassificationPrediction> AddToModel(List<string> ids, string className)
         {
             var events = homeEvents.GetEvents(ids);
             return brainsManager.AddToModel(events, className);
+        }
+
+        public IEnumerable<ClassificationPrediction> FitModel()
+        {
+            return brainsManager.FitModel();
         }
 
         public IEnumerable<ClassificationPrediction> BrainPredict(List<string> ids)
         {
             var events = homeEvents.GetEvents(ids).ToList();
             return brainsManager.Predict(events);
+        }
+
+        public void AddToModel(Dictionary<DateTime, string> datesForEndEvent)
+        {
+            var data = datesForEndEvent
+                .Select(p => new ClassificationInputData(homeEvents.GetEventsWindow(p.Key), p.Value));
+            brainsManager.FitModel(data);
         }
     }
 }

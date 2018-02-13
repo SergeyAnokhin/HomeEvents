@@ -46,5 +46,17 @@ namespace MachineLearningModule.Brain
                     new ClassificationInputData(events, className)
                 }).ToList());
         }
+
+        public IEnumerable<ClassificationPrediction> FitModel(IEnumerable<ClassificationInputData> data)
+        {
+            return brainApiAdapters
+                .SelectMany(a => a.Fit(data).ToList()).ToList();
+        }
+
+        public IEnumerable<ClassificationPrediction> FitModel()
+        {
+            // load from MongoDB
+            throw new NotImplementedException();
+        }
     }
 }

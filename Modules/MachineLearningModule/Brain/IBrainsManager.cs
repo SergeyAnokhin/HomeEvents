@@ -10,5 +10,7 @@ namespace MachineLearningModule.Brain
         IEnumerable<BrainInfo> GetActiveBrains();
         IEnumerable<ClassificationPrediction> Predict(List<HomeEvent> events);
         IEnumerable<ClassificationPrediction> AddToModel(IEnumerable<HomeEvent> events, string className);
+        IEnumerable<ClassificationPrediction> FitModel(IEnumerable<ClassificationInputData> data);
+        IEnumerable<ClassificationPrediction> FitModel();
     }
 }
