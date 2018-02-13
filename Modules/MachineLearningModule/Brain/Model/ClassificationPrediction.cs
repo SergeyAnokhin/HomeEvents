@@ -8,6 +8,6 @@ namespace MachineLearningModule.Brain.Model
         public string Class { get; set; }
         public float Probability { get; set; }
         public Dictionary<string, float> Probabilities { get; set; }
-        public int Seconds { get; set; }
+        public float Seconds { get; set; }
     }
 }

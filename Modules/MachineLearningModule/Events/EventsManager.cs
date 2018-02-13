@@ -45,11 +45,11 @@ namespace MachineLearningModule.Events
             return brainsManager.Predict(events);
         }
 
-        public void AddToModel(Dictionary<DateTime, string> datesForEndEvent)
+        public IEnumerable<ClassificationPrediction> AddToModel(Dictionary<DateTime, string> datesForEndEvent)
         {
             var data = datesForEndEvent
                 .Select(p => new ClassificationInputData(homeEvents.GetEventsWindow(p.Key), p.Value));
-            brainsManager.FitModel(data);
+            return brainsManager.FitModel(data);
         }
     }
 }

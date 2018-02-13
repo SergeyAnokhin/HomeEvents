@@ -12,6 +12,6 @@ namespace MachineLearningModule.Events
         IEnumerable<ClassificationPrediction> AddToModel(List<string> ids, string className);
         IEnumerable<ClassificationPrediction> FitModel();
         IEnumerable<ClassificationPrediction> BrainPredict(List<string> ids);
-        void AddToModel(Dictionary<DateTime, string> datesForEndEvent);
+        IEnumerable<ClassificationPrediction> AddToModel(Dictionary<DateTime, string> datesForEndEvent);
     }
 }

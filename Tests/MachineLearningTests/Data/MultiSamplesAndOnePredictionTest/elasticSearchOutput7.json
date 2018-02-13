@@ -1,0 +1,1127 @@
+
+{
+  "took" : 38,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 375,
+    "successful" : 375,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 33,
+    "max_score" : null,
+    "hits" : [
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsVlRYzcI0DKot-_FK",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-06T18:17:32.391Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Hall(0) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 0,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "Off"
+        },
+        "sort" : [
+          1517941052391
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsViOEzcI0DKot-_FJ",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-06T18:17:19.883Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Ceiling-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Hall(0) Ceiling"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Ceiling",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517941039883
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsVgeWzcI0DKot-_FI",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-06T18:17:12.418Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Hall(0) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517941032418
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsVeiezcI0DKot-_FH",
+        "_score" : null,
+        "_source" : {
+          "type" : "measure",
+          "message" : "tcp: 192.168.1.37:48980=>74.125.133.108:587 2018-02-06T18:17:00.910Z - 2018-02-06T18:17:03.327Z (false) 2018-02-06T18:17:03.351Z",
+          "value_long" : 148638.0,
+          "tags" : [
+            "packetbeat"
+          ],
+          "@timestamp" : "2018-02-06T18:17:00.910Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "foscamMotion",
+            "type" : "Motion",
+            "device" : "Foscam camera",
+            "display" : "FrontWall(.) Foscam"
+          },
+          "position" : {
+            "is_external" : true,
+            "detail" : "Foscam",
+            "floor" : 0,
+            "room" : "FrontWall"
+          },
+          "value" : 1.0,
+          "status" : "On"
+        },
+        "sort" : [
+          1517941020910
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsVOmezcI0DKot-_E6",
+        "_score" : null,
+        "_source" : {
+          "type" : "measure",
+          "message" : "tcp: 192.168.1.37:59719=>74.125.133.109:587 2018-02-06T18:15:57.992Z - 2018-02-06T18:15:58.332Z (false) 2018-02-06T18:15:58.350Z",
+          "value_long" : 1530.0,
+          "tags" : [
+            "packetbeat"
+          ],
+          "@timestamp" : "2018-02-06T18:15:57.992Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "foscamMotion",
+            "type" : "Motion",
+            "device" : "Foscam camera",
+            "display" : "FrontWall(.) Foscam"
+          },
+          "position" : {
+            "is_external" : true,
+            "detail" : "Foscam",
+            "floor" : 0,
+            "room" : "FrontWall"
+          },
+          "value" : 1.0,
+          "status" : "On"
+        },
+        "sort" : [
+          1517940957992
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsVMVAzcI0DKot-_E5",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-06T18:15:50.226Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Hall(0) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 0,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "Off"
+        },
+        "sort" : [
+          1517940950226
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsVJQXzcI0DKot-_E3",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-06T18:15:37.639Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Ceiling-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Hall(0) Ceiling"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Ceiling",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517940937639
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsVJtrzcI0DKot-_E4",
+        "_score" : null,
+        "_source" : {
+          "type" : "measure",
+          "message" : "tcp: 192.168.1.37:59685=>74.125.133.109:587 2018-02-06T18:15:36.305Z - 2018-02-06T18:15:38.326Z (false) 2018-02-06T18:15:38.352Z",
+          "value_long" : 123958.0,
+          "tags" : [
+            "packetbeat"
+          ],
+          "@timestamp" : "2018-02-06T18:15:36.305Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "foscamMotion",
+            "type" : "Motion",
+            "device" : "Foscam camera",
+            "display" : "FrontWall(.) Foscam"
+          },
+          "position" : {
+            "is_external" : true,
+            "detail" : "Foscam",
+            "floor" : 0,
+            "room" : "FrontWall"
+          },
+          "value" : 1.0,
+          "status" : "On"
+        },
+        "sort" : [
+          1517940936305
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsVIeqzcI0DKot-_E2",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-06T18:15:34.239Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Hall(0) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517940934239
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsVCY4zcI0DKot-_E0",
+        "_score" : null,
+        "_source" : {
+          "type" : "measure",
+          "message" : "tcp: 192.168.1.37:59647=>74.125.133.109:587 2018-02-06T18:15:05.453Z - 2018-02-06T18:15:08.343Z (false) 2018-02-06T18:15:08.350Z",
+          "value_long" : 188040.0,
+          "tags" : [
+            "packetbeat"
+          ],
+          "@timestamp" : "2018-02-06T18:15:05.453Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "foscamMotion",
+            "type" : "Motion",
+            "device" : "Foscam camera",
+            "display" : "FrontWall(.) Foscam"
+          },
+          "position" : {
+            "is_external" : true,
+            "detail" : "Foscam",
+            "floor" : 0,
+            "room" : "FrontWall"
+          },
+          "value" : 1.0,
+          "status" : "On"
+        },
+        "sort" : [
+          1517940905453
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsU9gvzcI0DKot-_Ex",
+        "_score" : null,
+        "_source" : {
+          "type" : "measure",
+          "message" : "tcp: 192.168.1.37:48834=>74.125.133.108:587 2018-02-06T18:14:47.251Z - 2018-02-06T18:14:48.299Z (false) 2018-02-06T18:14:48.351Z",
+          "value_long" : 33846.0,
+          "tags" : [
+            "packetbeat"
+          ],
+          "@timestamp" : "2018-02-06T18:14:47.251Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "foscamMotion",
+            "type" : "Motion",
+            "device" : "Foscam camera",
+            "display" : "FrontWall(.) Foscam"
+          },
+          "position" : {
+            "is_external" : true,
+            "detail" : "Foscam",
+            "floor" : 0,
+            "room" : "FrontWall"
+          },
+          "value" : 1.0,
+          "status" : "On"
+        },
+        "sort" : [
+          1517940887251
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsU4odzcI0DKot-_Ew",
+        "_score" : null,
+        "_source" : {
+          "type" : "measure",
+          "message" : "tcp: 192.168.1.37:59582=>74.125.133.109:587 2018-02-06T18:14:26.942Z - 2018-02-06T18:14:28.349Z (false) 2018-02-06T18:14:28.352Z",
+          "value_long" : 55952.0,
+          "tags" : [
+            "packetbeat"
+          ],
+          "@timestamp" : "2018-02-06T18:14:26.942Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "foscamMotion",
+            "type" : "Motion",
+            "device" : "Foscam camera",
+            "display" : "FrontWall(.) Foscam"
+          },
+          "position" : {
+            "is_external" : true,
+            "detail" : "Foscam",
+            "floor" : 0,
+            "room" : "FrontWall"
+          },
+          "value" : 1.0,
+          "status" : "On"
+        },
+        "sort" : [
+          1517940866942
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsU1AxzcI0DKot-_Er",
+        "_score" : null,
+        "_source" : {
+          "type" : "measure",
+          "message" : "tcp: 192.168.1.37:48770=>74.125.133.108:587 2018-02-06T18:14:08.732Z - 2018-02-06T18:14:13.333Z (false) 2018-02-06T18:14:13.350Z",
+          "value_long" : 275622.0,
+          "tags" : [
+            "packetbeat"
+          ],
+          "@timestamp" : "2018-02-06T18:14:08.732Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "foscamMotion",
+            "type" : "Motion",
+            "device" : "Foscam camera",
+            "display" : "FrontWall(.) Foscam"
+          },
+          "position" : {
+            "is_external" : true,
+            "detail" : "Foscam",
+            "floor" : 0,
+            "room" : "FrontWall"
+          },
+          "value" : 1.0,
+          "status" : "On"
+        },
+        "sort" : [
+          1517940848732
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsUzUOzcI0DKot-_Eq",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-06T18:14:07.757Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Hall(0) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 0,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "Off"
+        },
+        "sort" : [
+          1517940847757
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsUvl4zcI0DKot-_Ek",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-06T18:13:52.506Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Ceiling-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Hall(0) Ceiling"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Ceiling",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517940832506
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsUmnFzcI0DKot-_Eh",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-06T18:13:15.738Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Ceiling-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Hall(0) Ceiling"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Ceiling",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517940795738
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsUlm8zcI0DKot-_Eg",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-06T18:13:11.634Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Hall(0) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517940791634
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsUk2wzcI0DKot-_Ef",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-06T18:13:08.516Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "1-Corridor-Ceiling-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Corridor(1) Ceiling"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Ceiling",
+            "floor" : 1,
+            "room" : "Corridor"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517940788516
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsUfr9zcI0DKot-_EU",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-06T18:12:47.371Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Hall(0) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 0,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "Off"
+        },
+        "sort" : [
+          1517940767371
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsUeN1zcI0DKot-_ET",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-06T18:12:41.346Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Ceiling-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Hall(0) Ceiling"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Ceiling",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517940761346
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsUdxpzcI0DKot-_ES",
+        "_score" : null,
+        "_source" : {
+          "type" : "measure",
+          "message" : "tcp: 192.168.1.37:47042=>64.233.167.108:587 2018-02-06T18:12:35.775Z - 2018-02-06T18:12:38.299Z (false) 2018-02-06T18:12:38.350Z",
+          "value_long" : 143978.0,
+          "tags" : [
+            "packetbeat"
+          ],
+          "@timestamp" : "2018-02-06T18:12:35.775Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "foscamMotion",
+            "type" : "Motion",
+            "device" : "Foscam camera",
+            "display" : "FrontWall(.) Foscam"
+          },
+          "position" : {
+            "is_external" : true,
+            "detail" : "Foscam",
+            "floor" : 0,
+            "room" : "FrontWall"
+          },
+          "value" : 1.0,
+          "status" : "On"
+        },
+        "sort" : [
+          1517940755775
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsUckZzcI0DKot-_ER",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-06T18:12:34.606Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Hall(0) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517940754606
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsUb6JzcI0DKot-_EQ",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-06T18:12:31.908Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Hall(0) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 0,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "Off"
+        },
+        "sort" : [
+          1517940751908
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsUbvRzcI0DKot-_EP",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-06T18:12:31.204Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Hall(0) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517940751204
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsUZztzcI0DKot-_EO",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-06T18:12:23.297Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Hall(0) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 0,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "Off"
+        },
+        "sort" : [
+          1517940743297
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsUY_6zcI0DKot-_EN",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-06T18:12:19.442Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Hall(0) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517940739442
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsUW_3zcI0DKot-_EM",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-06T18:12:11.778Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Hall(0) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 0,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "Off"
+        },
+        "sort" : [
+          1517940731778
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsUVKszcI0DKot-_EL",
+        "_score" : null,
+        "_source" : {
+          "type" : "measure",
+          "message" : "tcp: 192.168.1.37:47218=>64.233.167.109:587 2018-02-06T18:11:59.006Z - 2018-02-06T18:12:03.328Z (false) 2018-02-06T18:12:03.349Z",
+          "value_long" : 287580.0,
+          "tags" : [
+            "packetbeat"
+          ],
+          "@timestamp" : "2018-02-06T18:11:59.006Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "foscamMotion",
+            "type" : "Motion",
+            "device" : "Foscam camera",
+            "display" : "FrontWall(.) Foscam"
+          },
+          "position" : {
+            "is_external" : true,
+            "detail" : "Foscam",
+            "floor" : 0,
+            "room" : "FrontWall"
+          },
+          "value" : 1.0,
+          "status" : "On"
+        },
+        "sort" : [
+          1517940719006
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsUR3lzcI0DKot-_EK",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-06T18:11:50.739Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Ceiling-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Hall(0) Ceiling"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Ceiling",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517940710739
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsUPrSzcI0DKot-_EJ",
+        "_score" : null,
+        "_source" : {
+          "type" : "measure",
+          "message" : "Device connected to internal network",
+          "tags" : [
+            "heartbeat"
+          ],
+          "@timestamp" : "2018-02-06T18:11:40.439Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "id" : "SonyExperiaConnection",
+            "type" : "Connection",
+            "device" : "Mobile Phone",
+            "display" : "Mobile(.) Sony Xperia"
+          },
+          "position" : {
+            "floor" : 0,
+            "room" : "Mobile",
+            "detail" : "Sony Experia"
+          },
+          "value" : 1,
+          "status" : "On"
+        },
+        "sort" : [
+          1517940700439
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsUPUszcI0DKot-_EI",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-06T18:11:40.034Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Hall(0) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517940700034
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsUPMMzcI0DKot-_EH",
+        "_score" : null,
+        "_source" : {
+          "type" : "measure",
+          "message" : "tcp: 192.168.1.37:47188=>64.233.167.109:587 2018-02-06T18:11:34.245Z - 2018-02-06T18:11:38.325Z (false) 2018-02-06T18:11:38.349Z",
+          "value_long" : 270576.0,
+          "tags" : [
+            "packetbeat"
+          ],
+          "@timestamp" : "2018-02-06T18:11:34.245Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "foscamMotion",
+            "type" : "Motion",
+            "device" : "Foscam camera",
+            "display" : "FrontWall(.) Foscam"
+          },
+          "position" : {
+            "is_external" : true,
+            "detail" : "Foscam",
+            "floor" : 0,
+            "room" : "FrontWall"
+          },
+          "value" : 1.0,
+          "status" : "On"
+        },
+        "sort" : [
+          1517940694245
+        ]
+      },
+      {
+        "_index" : "history-2018.02.06",
+        "_type" : "measure",
+        "_id" : "AWFsTjQZzcI0DKot-_D3",
+        "_score" : null,
+        "_source" : {
+          "type" : "measure",
+          "message" : "tcp: 192.168.1.37:46911=>64.233.167.108:587 2018-02-06T18:08:35.643Z - 2018-02-06T18:08:38.320Z (false) 2018-02-06T18:08:38.348Z",
+          "value_long" : 145184.0,
+          "tags" : [
+            "packetbeat"
+          ],
+          "@timestamp" : "2018-02-06T18:08:35.643Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "foscamMotion",
+            "type" : "Motion",
+            "device" : "Foscam camera",
+            "display" : "FrontWall(.) Foscam"
+          },
+          "position" : {
+            "is_external" : true,
+            "detail" : "Foscam",
+            "floor" : 0,
+            "room" : "FrontWall"
+          },
+          "value" : 1.0,
+          "status" : "On"
+        },
+        "sort" : [
+          1517940515643
+        ]
+      }
+    ]
+  }
+}
+

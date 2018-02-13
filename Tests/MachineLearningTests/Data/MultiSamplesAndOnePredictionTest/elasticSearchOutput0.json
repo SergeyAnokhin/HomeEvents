@@ -1,0 +1,981 @@
+
+{
+  "took" : 39,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 375,
+    "successful" : 375,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 29,
+    "max_score" : null,
+    "hits" : [
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcaPeTzcI0DKot-4td",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T16:03:58.384Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "2-Stairs-Pipe-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Stairs(2) Pipe"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Pipe",
+            "floor" : 2,
+            "room" : "Stairs"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517673838384
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcaPV-zcI0DKot-4tc",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T16:03:57.826Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "1-Play-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Play(1) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 1,
+            "room" : "Play"
+          },
+          "type" : "measure",
+          "value" : 0,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "Off"
+        },
+        "sort" : [
+          1517673837826
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcaMLezcI0DKot-4tZ",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T16:03:44.889Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "1-Play-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Play(1) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 1,
+            "room" : "Play"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517673824889
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcaLVrzcI0DKot-4tX",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T16:03:41.431Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "1-Corridor-Ceiling-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Corridor(1) Ceiling"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Ceiling",
+            "floor" : 1,
+            "room" : "Corridor"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517673821431
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcaLe7zcI0DKot-4tY",
+        "_score" : null,
+        "_source" : {
+          "type" : "measure",
+          "message" : "tcp: 192.168.1.37:51654=>74.125.206.108:587 2018-02-03T16:03:40.185Z - 2018-02-03T16:03:40.897Z (false) 2018-02-03T16:03:40.947Z",
+          "value_long" : 1530.0,
+          "tags" : [
+            "packetbeat"
+          ],
+          "@timestamp" : "2018-02-03T16:03:40.185Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "foscamMotion",
+            "type" : "Motion",
+            "device" : "Foscam camera",
+            "display" : "FrontWall(.) Foscam"
+          },
+          "position" : {
+            "is_external" : true,
+            "detail" : "Foscam",
+            "floor" : 0,
+            "room" : "FrontWall"
+          },
+          "value" : 1.0,
+          "status" : "On"
+        },
+        "sort" : [
+          1517673820185
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcaN8jzcI0DKot-4tb",
+        "_score" : null,
+        "_source" : {
+          "type" : "measure",
+          "message" : "tcp: 192.168.1.37:51654=>74.125.206.108:587 2018-02-03T16:03:40.185Z - 2018-02-03T16:03:50.937Z (false) 2018-02-03T16:03:50.947Z",
+          "value_long" : 319930.0,
+          "tags" : [
+            "packetbeat"
+          ],
+          "@timestamp" : "2018-02-03T16:03:40.185Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "foscamMotion",
+            "type" : "Motion",
+            "device" : "Foscam camera",
+            "display" : "FrontWall(.) Foscam"
+          },
+          "position" : {
+            "is_external" : true,
+            "detail" : "Foscam",
+            "floor" : 0,
+            "room" : "FrontWall"
+          },
+          "value" : 1.0,
+          "status" : "On"
+        },
+        "sort" : [
+          1517673820185
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcaMuyzcI0DKot-4ta",
+        "_score" : null,
+        "_source" : {
+          "type" : "measure",
+          "message" : "tcp: 192.168.1.37:51654=>74.125.206.108:587 2018-02-03T16:03:40.185Z - 2018-02-03T16:03:45.939Z (false) 2018-02-03T16:03:45.946Z",
+          "value_long" : 141576.0,
+          "tags" : [
+            "packetbeat"
+          ],
+          "@timestamp" : "2018-02-03T16:03:40.185Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "foscamMotion",
+            "type" : "Motion",
+            "device" : "Foscam camera",
+            "display" : "FrontWall(.) Foscam"
+          },
+          "position" : {
+            "is_external" : true,
+            "detail" : "Foscam",
+            "floor" : 0,
+            "room" : "FrontWall"
+          },
+          "value" : 1.0,
+          "status" : "On"
+        },
+        "sort" : [
+          1517673820185
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcaIqkzcI0DKot-4tU",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T16:03:30.473Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Hall(0) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 0,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "Off"
+        },
+        "sort" : [
+          1517673810473
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcaH5fzcI0DKot-4tS",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T16:03:27.347Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Hall(0) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517673807347
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcaEIgzcI0DKot-4tQ",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T16:03:11.920Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "1-Corridor-Ceiling-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Corridor(1) Ceiling"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Ceiling",
+            "floor" : 1,
+            "room" : "Corridor"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517673791920
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcaAsQzcI0DKot-4tO",
+        "_score" : null,
+        "_source" : {
+          "type" : "measure",
+          "message" : "Device disconnected from internal network",
+          "tags" : [
+            "heartbeat"
+          ],
+          "@timestamp" : "2018-02-03T16:02:40.442Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "id" : "SonyExperiaConnection",
+            "type" : "Connection",
+            "device" : "Mobile Phone",
+            "display" : "Mobile(.) Sony Xperia"
+          },
+          "position" : {
+            "floor" : 0,
+            "room" : "Mobile",
+            "detail" : "Sony Experia"
+          },
+          "value" : 0,
+          "status" : "Off"
+        },
+        "sort" : [
+          1517673760442
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcZ7atzcI0DKot-4tM",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T16:02:36.225Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "1-Corridor-Ceiling-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Corridor(1) Ceiling"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Ceiling",
+            "floor" : 1,
+            "room" : "Corridor"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517673756225
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcZ68VzcI0DKot-4tL",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T16:02:34.266Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Ceiling-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Hall(0) Ceiling"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Ceiling",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517673754266
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcZ1jJzcI0DKot-4tK",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T16:02:12.189Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "1-Corridor-Ceiling-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Corridor(1) Ceiling"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Ceiling",
+            "floor" : 1,
+            "room" : "Corridor"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517673732189
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcZ0aWzcI0DKot-4tJ",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T16:02:07.527Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "1-Play-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Play(1) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 1,
+            "room" : "Play"
+          },
+          "type" : "measure",
+          "value" : 0,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "Off"
+        },
+        "sort" : [
+          1517673727527
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcZz2HzcI0DKot-4tI",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T16:02:05.170Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "1-Play-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Play(1) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 1,
+            "room" : "Play"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517673725170
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcZwTWzcI0DKot-4tH",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T16:01:50.683Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "2-Stairs-Pipe-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Stairs(2) Pipe"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Pipe",
+            "floor" : 2,
+            "room" : "Stairs"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517673710683
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcZsMHzcI0DKot-4tG",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T16:01:33.478Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "1-Corridor-Ceiling-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Corridor(1) Ceiling"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Ceiling",
+            "floor" : 1,
+            "room" : "Corridor"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517673693478
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcY3mAzcI0DKot-4sz",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T15:57:58.411Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "2-Stairs-Pipe-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Stairs(2) Pipe"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Pipe",
+            "floor" : 2,
+            "room" : "Stairs"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517673478411
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcYuYwzcI0DKot-4sx",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T15:57:20.696Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "2-Stairs-Pipe-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Stairs(2) Pipe"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Pipe",
+            "floor" : 2,
+            "room" : "Stairs"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517673440696
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcYkDIzcI0DKot-4sv",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T15:56:38.340Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "2-Stairs-Pipe-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Stairs(2) Pipe"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Pipe",
+            "floor" : 2,
+            "room" : "Stairs"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517673398340
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcYgnFzcI0DKot-4ss",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T15:56:24.273Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "1-Play-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Play(1) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 1,
+            "room" : "Play"
+          },
+          "type" : "measure",
+          "value" : 0,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "Off"
+        },
+        "sort" : [
+          1517673384273
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcYf-xzcI0DKot-4sr",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T15:56:21.675Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "1-Play-Door-Door",
+            "type" : "Door",
+            "device" : "Door",
+            "display" : "Play(1) Door"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Door",
+            "floor" : 1,
+            "room" : "Play"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517673381675
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcYfRnzcI0DKot-4sq",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T15:56:18.770Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "1-Corridor-Ceiling-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Corridor(1) Ceiling"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Ceiling",
+            "floor" : 1,
+            "room" : "Corridor"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517673378770
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcYcdTzcI0DKot-4so",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T15:56:07.231Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "1-Corridor-Ceiling-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Corridor(1) Ceiling"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Ceiling",
+            "floor" : 1,
+            "room" : "Corridor"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517673367231
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "MA-107CE21D90D1-180203-155604",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T15:56:04.000Z",
+          "@version" : "1",
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "107CE21D90D1",
+            "type" : "Door",
+            "device" : "OpenClose",
+            "display" : "Garage(0) Door"
+          },
+          "position" : {
+            "is_external" : "false",
+            "detail" : "Door",
+            "floor" : 0,
+            "room" : "Garage"
+          },
+          "type" : "measure",
+          "message" : "Closed",
+          "value" : "0",
+          "tags" : [
+            "mobile_alerts",
+            "mobile_alerts"
+          ],
+          "status" : "Closed"
+        },
+        "sort" : [
+          1517673364000
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcYZiXzcI0DKot-4sj",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T15:55:55.298Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Ceiling-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Hall(0) Ceiling"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Ceiling",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517673355298
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcYRwFzcI0DKot-4sd",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T15:55:23.396Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "0-Hall-Ceiling-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Hall(0) Ceiling"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Ceiling",
+            "floor" : 0,
+            "room" : "Hall"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517673323396
+        ]
+      },
+      {
+        "_index" : "history-2018.02.03",
+        "_type" : "measure",
+        "_id" : "AWFcYK85zcI0DKot-4sc",
+        "_score" : null,
+        "_source" : {
+          "@timestamp" : "2018-02-03T15:54:55.154Z",
+          "@version" : 1,
+          "doc" : "event",
+          "sensor" : {
+            "unit" : "bool",
+            "id" : "1-Corridor-Ceiling-Motion",
+            "type" : "Motion",
+            "device" : "Motion",
+            "display" : "Corridor(1) Ceiling"
+          },
+          "position" : {
+            "is_external" : false,
+            "detail" : "Ceiling",
+            "floor" : 1,
+            "room" : "Corridor"
+          },
+          "type" : "measure",
+          "value" : 1,
+          "tags" : [
+            "domoticz_notification"
+          ],
+          "status" : "On"
+        },
+        "sort" : [
+          1517673295154
+        ]
+      }
+    ]
+  }
+}
+

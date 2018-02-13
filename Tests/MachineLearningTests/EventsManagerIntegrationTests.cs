@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Common;
 using CommonTests.Mocks;
+using MachineLearningModule.Brain.Services;
 using MachineLearningModule.Events;
 using MachineLearningModule.Repositories;
 using Microsoft.Practices.Unity;
@@ -79,12 +80,9 @@ namespace MachineLearningTests
         [TestMethod]
         public void MultiSamplesAndOnePredictionTest()
         {
-            var esMock = new ElastiSearchServiceMock(new[]
-            {
-                @"Data\ElastiSearchServiceMock\ResponseEvents.json",
-                @"Data\ElastiSearchServiceMock\ResponseEvents.json",
-                @"Data\ElastiSearchServiceMock\ResponseEvents.json"
-            });
+            var esMock = new ElastiSearchServiceMock(
+                Enumerable.Range(0, 9).Select(i => @"Data\MultiSamplesAndOnePredictionTest\elasticSearchOutput" + i + ".json")
+                );
             var apiMock = new ApiServiceMock
             {
                 MockResponseData = new Dictionary<string, Stack<string>>
@@ -108,6 +106,10 @@ namespace MachineLearningTests
                 container.RegisterInstance<IElasticSearchService>(esMock);
                 container.RegisterInstance<IApiService>(apiMock);
             }
+            else
+            {
+                container.RegisterType<IBrainApiAdapter, SkLearnBrainApiAdapter>("SkLearnBrainApiAdapter");
+            }
 
             var eventManager = container.Resolve<IEventsManager>();
 
@@ -124,8 +126,8 @@ namespace MachineLearningTests
                 {new DateTime(2018, 02, 05, 20, 00, 50), "MasterCome"},
             };
 
+            var prediction = eventManager.AddToModel(datesForEndEvent);
             var events = eventManager.GetEventsForSelect(new DateTime(2018, 02, 03, 17, 04, 00)).ToList();
-            eventManager.AddToModel(datesForEndEvent);
             var predictions = eventManager.BrainPredict(events.Select(e => e.Id).ToList()).ToList();
 
             Assert.IsNotNull(predictions);

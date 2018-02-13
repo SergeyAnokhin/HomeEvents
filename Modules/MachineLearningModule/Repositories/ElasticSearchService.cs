@@ -12,6 +12,7 @@ namespace MachineLearningModule.Repositories
     {
         private readonly ILogService log;
         private readonly Config.Config config;
+        private int counter = 0;
 
         public ElasticSearchService(IAppConfigService configService, ILogService log)
         {
@@ -56,6 +57,7 @@ namespace MachineLearningModule.Repositories
             info = info.Replace("# Request:", "<br># <b>Request</b>:<br>");
             var infos = Regex.Split(info, "# Response:");
             var responseTxt = infos[1].Crop(500);
+            System.IO.File.WriteAllText("elasticSearchOutput" + counter++ + ".json", infos[1]);
             var request = infos[0].UrlToAFref();
             return $"{request}<br># <b>Response</b> ({response.Documents.Count}):<br>{responseTxt} ...({responseTxt.Length})";
         }

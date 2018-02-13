@@ -107,6 +107,33 @@
     </None>
     <None Include="Data\eventsTestHelper.xlsx" />
     <None Include="Data\json1.json" />
+    <None Include="Data\MultiSamplesAndOnePredictionTest\elasticSearchOutput0.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\MultiSamplesAndOnePredictionTest\elasticSearchOutput1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\MultiSamplesAndOnePredictionTest\elasticSearchOutput2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\MultiSamplesAndOnePredictionTest\elasticSearchOutput3.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\MultiSamplesAndOnePredictionTest\elasticSearchOutput4.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\MultiSamplesAndOnePredictionTest\elasticSearchOutput5.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\MultiSamplesAndOnePredictionTest\elasticSearchOutput6.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\MultiSamplesAndOnePredictionTest\elasticSearchOutput7.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\MultiSamplesAndOnePredictionTest\elasticSearchOutput8.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
