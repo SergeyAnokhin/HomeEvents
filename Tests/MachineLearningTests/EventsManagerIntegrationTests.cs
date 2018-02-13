@@ -124,6 +124,27 @@ namespace MachineLearningTests
                 {new DateTime(2018, 02, 06, 19, 45, 45), "MasterCome"},
                 {new DateTime(2018, 02, 06, 19, 18, 28), "Children"},
                 {new DateTime(2018, 02, 05, 20, 00, 50), "MasterCome"},
+                {new DateTime(2018, 01, 29, 19, 10, 30), "Children"},
+                {new DateTime(2018, 01, 30, 19, 12, 05), "Children"},
+                {new DateTime(2018, 02, 01, 19, 03, 05), "Children"},
+                {new DateTime(2018, 01, 29, 19, 32, 00), "MasterCome"},
+                {new DateTime(2018, 02, 01, 19, 33, 20), "MasterCome"},
+                //{new DateTime(2018, 02, 02, 19, 24, 20), "Children"},
+                // {new DateTime(2018, 02, 02, 21, 40, 00), "Garbage"},
+                // {new DateTime(2018, 02, 01, 23, 15, 00), "Garbage"},
+
+                //{new DateTime(2018, 01, 02, 18, 20, 15), "Children"},
+                //{new DateTime(2018, 01, 03, 18, 56, 10), "Children"},
+                //{new DateTime(2018, 01, 04, 19, 14, 40), "Children"},
+                //{new DateTime(2018, 01, 05, 18, 39, 00), "Children"},
+                //{new DateTime(2018, 01, 06, 15, 23, 20), "Children"},
+                //{new DateTime(2018, 01, 08, 19, 24, 00), "Children"},
+                //{new DateTime(2018, 01, 10, 19, 06, 00), "Children"},
+                //{new DateTime(2018, 01, 02, 19, 37, 40), "MasterCome"},
+                //{new DateTime(2018, 01, 03, 19, 14, 00), "MasterCome"},
+                //{new DateTime(2018, 01, 04, 19, 25, 15), "MasterCome"},
+                //{new DateTime(2018, 01, 05, 19, 46, 00), "MasterCome"},
+                //{new DateTime(2018, 01, 06, 19, 09, 10), "MasterCome"},
             };
 
             var prediction = eventManager.AddToModel(datesForEndEvent);
@@ -133,6 +154,12 @@ namespace MachineLearningTests
             Assert.IsNotNull(predictions);
             Assert.AreNotEqual(0, predictions.Count);
             Assert.IsTrue(predictions.All(p => p.Class == "MasterCome"), predictions.StringJoin(Environment.NewLine));
+
+            events = eventManager.GetEventsForSelect(new DateTime(2018, 02, 02, 19, 24, 20)).ToList();
+            predictions = eventManager.BrainPredict(events.Select(e => e.Id).ToList()).ToList();
+
+            Assert.IsTrue(predictions.All(p => p.Class == "Children"), predictions.StringJoin(Environment.NewLine));
+
         }
     }
 }
